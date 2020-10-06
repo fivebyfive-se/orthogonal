@@ -4,7 +4,7 @@
   "description": "Dependency injection for JavaScript",
   "main": "orthogonal.js",
   "scripts": {
-    "doc": "jsdoc2md src/orthogonal.js > docs/index.md && jsdoc2md src/orthogonal.extensions.js > docs/orthogonal.extensions.md && jsdoc2md src/libs/orthogonal.color.js > docs/libs.orthogonal.color.md",
+    "doc": "jsdoc2md --plugin dmd-readable --files src/orthogonal.js > docs/index.md && jsdoc2md --plugin dmd-readable --files src/orthogonal.extensions.js > docs/orthogonal.extensions.md && jsdoc2md --plugin dmd-readable --files src/libs/orthogonal.color.js > docs/libs.orthogonal.color.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/fivebyfive-se/orthogonal#readme",
   "devDependencies": {
+    "dmd-readable": "^1.2.2",
     "jsdoc-to-markdown": "^6.0.1"
   }
 }

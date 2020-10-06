@@ -10,7 +10,8 @@
 </dd>
 </dl>
 
-<a name="module_se/fivebyfive/ortho/extensions"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions"></a>
 
 ## se/fivebyfive/ortho/extensions
 
@@ -67,35 +68,38 @@
     * [~RgbColor](#module_se/fivebyfive/ortho/extensions..RgbColor) : <code>Object</code>
     * [~RgbaColor](#module_se/fivebyfive/ortho/extensions..RgbaColor) : <code>Object</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~ArrayHelper
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~ArrayHelper`
+
 
 * [~ArrayHelper](#module_se/fivebyfive/ortho/extensions..ArrayHelper)
     * [new ArrayHelper()](#new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new)
     * [.ensureArray(arrOrItem)](#module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray) ⇒ <code>Array.&lt;any&gt;</code>
     * [.repeat(value, length)](#module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat) ⇒ <code>Array.&lt;any&gt;</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new"></a>
 
 #### new ArrayHelper()
-Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray"></a>
 
 #### arrayHelper.ensureArray(arrOrItem) ⇒ <code>Array.&lt;any&gt;</code>
-**Kind**: instance method of [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - `arrOrItem` if it is an array, or `[arrOrItem]` if not.  
 
 | Param | Type |
 | --- | --- |
-| arrOrItem | <code>any</code> \| <code>Array.&lt;any&gt;</code> | 
+| arrOrItem | <code>any</code>, <code>Array.&lt;any&gt;</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat"></a>
 
 #### arrayHelper.repeat(value, length) ⇒ <code>Array.&lt;any&gt;</code>
-**Kind**: instance method of [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - An array containing `value` `length` times.  
 
 | Param | Type |
@@ -103,12 +107,14 @@ Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogo
 | value | <code>any</code> | 
 | length | <code>number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~ObjectHelper
-Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~ObjectHelper`
+
 
 * [~ObjectHelper](#module_se/fivebyfive/ortho/extensions..ObjectHelper)
     * [new ObjectHelper($array)](#new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new)
@@ -123,7 +129,8 @@ Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~O
     * [.toKeyValuePairs(...objects)](#module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs) ⇒ <code>any</code>
     * [.split(obj)](#module_se/fivebyfive/ortho/extensions..ObjectHelper+split) ⇒ <code>Array.&lt;object&gt;</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new"></a>
 
 #### new ObjectHelper($array)
 
@@ -131,13 +138,13 @@ Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~O
 | --- | --- |
 | $array | [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper) | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+merge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+merge"></a>
 
 #### objectHelper.merge(target, ...sources) ⇒ <code>object</code>
-Copy the keys and values from the objects `sources` into `target`, overwriting
-existing keys.
+> Copy the keys and values from the objects `sources` into `target`, overwriting
+> existing keys.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 **Returns**: <code>object</code> - `target`  
 
 | Param | Type |
@@ -145,13 +152,13 @@ existing keys.
 | target | <code>object</code> | 
 | ...sources | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+disjunctMerge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+disjunctMerge"></a>
 
 #### objectHelper.disjunctMerge(target, ...sources) ⇒ <code>object</code>
-Copy the keys and values from the objects `sources` into `target`.
-Skip keys that already exist.
+> Copy the keys and values from the objects `sources` into `target`.
+> Skip keys that already exist.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 **Returns**: <code>object</code> - `target`  
 
 | Param | Type |
@@ -159,57 +166,57 @@ Skip keys that already exist.
 | target | <code>object</code> | 
 | ...sources | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+immutableMerge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+immutableMerge"></a>
 
 #### objectHelper.immutableMerge(...objects) ⇒ <code>object</code>
-Combine `objects` into a new `object` -- returning the result
+> Combine `objects` into a new `object` -- returning the result
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+allKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+allKeys"></a>
 
 #### objectHelper.allKeys(...objects) ⇒ <code>Array.&lt;string&gt;</code>
-Get all unique keys from `objects` as an array.
+> Get all unique keys from `objects` as an array.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+diffKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+diffKeys"></a>
 
 #### objectHelper.diffKeys(a, b) ⇒ <code>Array.&lt;string&gt;</code>
-Get all keys that are only in `a` or only in `b`
+> Get all keys that are only in `a` or only in `b`
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | a | <code>object</code> | 
 | b | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+filterKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+filterKeys"></a>
 
 #### objectHelper.filterKeys(obj, ...keys) ⇒ <code>object</code>
-Return a shallow copy of `obj`, keeping only the values whose keys
-are in `keys`
+> Return a shallow copy of `obj`, keeping only the values whose keys
+> are in `keys`
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | obj | <code>object</code> | 
 | ...keys | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePair"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePair"></a>
 
 #### objectHelper.fromKeyValuePair(key, value) ⇒ <code>object</code>
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -220,36 +227,36 @@ are in `keys`
 ```js
 const obj = fromKeyValuePair('foo', 10); // => obj === {foo: 10} 
 ```
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePairs"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePairs"></a>
 
 #### objectHelper.fromKeyValuePairs(...pairs) ⇒ <code>object</code>
-Give an array of arrays, `pairs` representing a list of keys and values,
-create a new object containing those keys and values.
+> Give an array of arrays, `pairs` representing a list of keys and values,
+> create a new object containing those keys and values.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
-| ...pairs | <code>string</code> \| <code>any</code> | 
+| ...pairs | <code>string</code>, <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs"></a>
 
 #### objectHelper.toKeyValuePairs(...objects) ⇒ <code>any</code>
-Get all keys and values from `objects`, and return them as an array of key/value pairs
+> Get all keys and values from `objects`, and return them as an array of key/value pairs
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+split"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+split"></a>
 
 #### objectHelper.split(obj) ⇒ <code>Array.&lt;object&gt;</code>
-Split an object into as many parts as the most number of items in any array-value
-contained in the object
+> Split an object into as many parts as the most number of items in any array-value
+> contained in the object
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -259,12 +266,14 @@ contained in the object
 ```js
 split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}] 
 ```
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~StringHelper
-Helper functions for handling strings. Injectable as `$string` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helper functions for handling strings. Injectable as `$string` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~StringHelper`
+
 
 * [~StringHelper](#module_se/fivebyfive/ortho/extensions..StringHelper)
     * [new StringHelper($object)](#new_module_se/fivebyfive/ortho/extensions..StringHelper_new)
@@ -275,7 +284,8 @@ Helper functions for handling strings. Injectable as `$string` from [module:se/f
     * [.snakeToCamel(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel) ⇒ <code>string</code>
     * [.camelToSnake(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake) ⇒ <code>string</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..StringHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..StringHelper_new"></a>
 
 #### new StringHelper($object)
 
@@ -283,78 +293,80 @@ Helper functions for handling strings. Injectable as `$string` from [module:se/f
 | --- | --- |
 | $object | [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper) | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+sanitize"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+sanitize"></a>
 
 #### stringHelper.sanitize(str) ⇒ <code>string</code>
-Make sure argument is stringy
+> Make sure argument is stringy
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+isEmpty"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+isEmpty"></a>
 
 #### stringHelper.isEmpty(str) ⇒ <code>boolean</code>
-Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
+> Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
-| str | <code>string</code> \| <code>any</code> | 
+| str | <code>string</code>, <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+hexToRgb"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+hexToRgb"></a>
 
 #### stringHelper.hexToRgb(hex) ⇒ <code>RgbColor</code>
-Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
+> Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | hex | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+rgbaToRgb"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+rgbaToRgb"></a>
 
 #### stringHelper.rgbaToRgb(rgba) ⇒ <code>RgbaColor</code>
-Parse a color in RGBA string format.
+> Parse a color in RGBA string format.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | rgba | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel"></a>
 
 #### stringHelper.snakeToCamel(str) ⇒ <code>string</code>
-Convert a string from `snake-case` to `camelCase`.
+> Convert a string from `snake-case` to `camelCase`.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake"></a>
 
 #### stringHelper.camelToSnake(str) ⇒ <code>string</code>
-Convert a string from `camelCase` to `snake-case`.
+> Convert a string from `camelCase` to `snake-case`.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~DomHelper
-Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~DomHelper`
+
 
 * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
     * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
@@ -366,12 +378,12 @@ Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/orth
     * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
     * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
 
 #### domHelper.onEvents(element, eventNames, ...callbacks)
-Connect `callbacks` to the list of events in `eventNames` on `element`.
+> Connect `callbacks` to the list of events in `eventNames` on `element`.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -379,14 +391,14 @@ Connect `callbacks` to the list of events in `eventNames` on `element`.
 | eventNames | <code>Array.&lt;string&gt;</code> | 
 | ...callbacks | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
 
 #### domHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
-Connect `callbacks` to the list of events in `eventNames` on `element`.
-Also wraps all callbacks in a function that calls `e.preventDefault()' on
-all trigger events.
+> Connect `callbacks` to the list of events in `eventNames` on `element`.
+> Also wraps all callbacks in a function that calls `e.preventDefault()' on
+> all trigger events.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -394,59 +406,59 @@ all trigger events.
 | eventNames | <code>Array.&lt;string&gt;</code> | 
 | ...callbacks | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
 
 #### domHelper.getPosition(element) ⇒ <code>Object</code>
-Get x and y coordinates of `element`
+> Get x and y coordinates of `element`
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
 
 #### domHelper.getSize(element) ⇒ <code>Object</code>
-Get dimensions of `element`
+> Get dimensions of `element`
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
 
 #### domHelper.getValue(element) ⇒ <code>string</code>
-Get sanitized value from `element` (assumed to be an input element),
-or empty string if there is no value.
+> Get sanitized value from `element` (assumed to be an input element),
+> or empty string if there is no value.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
 
 #### domHelper.setValue(element, value) ⇒ <code>string</code>
-Set sanitized `value` on `element` (assumed to be an input element),
-or empty string if there is no value.
+> Set sanitized `value` on `element` (assumed to be an input element),
+> or empty string if there is no value.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 | value | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
 
 #### domHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
-Create an HTML element.
+> Create an HTML element.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -454,36 +466,38 @@ Create an HTML element.
 | attributes | <code>Object</code> | 
 | ...children | <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
 
 #### domHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
-If `selectOrElement` is an `Element`, return it, otherwise try to find it
-treating `selectOrElement` as a dom query.
+> If `selectOrElement` is an `Element`, return it, otherwise try to find it
+> treating `selectOrElement` as a dom query.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
-| selectorOrElement | <code>string</code> \| <code>exernal:Element</code> | 
+| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~QueryHelper
-Helper for handling dom querys. Injectable from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal) as `$query`.
+> Helper for handling dom querys. Injectable from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal) as `$query`.
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~QueryHelper`
+
 
 * [~QueryHelper](#module_se/fivebyfive/ortho/extensions..QueryHelper)
     * [.map(root, selector, callback)](#module_se/fivebyfive/ortho/extensions..QueryHelper+map) ⇒ <code>Array.&lt;any&gt;</code>
     * [.queryByAttribute(root, attribute)](#module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute) ⇒ <code>Object</code>
     * [.dataSelectorAll(root, attribute, ...otherAttributes)](#module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll) ⇒ <code>Array.&lt;any&gt;</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+map"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+map"></a>
 
 #### queryHelper.map(root, selector, callback) ⇒ <code>Array.&lt;any&gt;</code>
-Wrapper around `querySelectorAll` allowing you to pass along a callback to call on all elements found
+> Wrapper around `querySelectorAll` allowing you to pass along a callback to call on all elements found
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - The mapped list  
 
 | Param | Type |
@@ -492,12 +506,12 @@ Wrapper around `querySelectorAll` allowing you to pass along a callback to call 
 | selector | <code>string</code> | 
 | callback | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute"></a>
 
 #### queryHelper.queryByAttribute(root, attribute) ⇒ <code>Object</code>
-Query by attribute name.
+> Query by attribute name.
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Object</code> - all matching elements, plus metadata.  
 
 | Param | Type |
@@ -505,12 +519,12 @@ Query by attribute name.
 | root | <code>external:HTMLElement</code> | 
 | attribute | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll"></a>
 
 #### queryHelper.dataSelectorAll(root, attribute, ...otherAttributes) ⇒ <code>Array.&lt;any&gt;</code>
-Query by data-attribute. Optionally adds other attributes to result
+> Query by data-attribute. Optionally adds other attributes to result
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - List of elements, along with index, and attribute values.  
 
 | Param | Type |
@@ -519,60 +533,64 @@ Query by data-attribute. Optionally adds other attributes to result
 | attribute | <code>string</code> | 
 | ...otherAttributes | <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~CssHelper
-Helper for getting css-vars and creating classnames. Injected as `$css` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
+> Helper for getting css-vars and creating classnames. Injected as `$css` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~CssHelper`
+
 
 * [~CssHelper](#module_se/fivebyfive/ortho/extensions..CssHelper)
     * [.getVar(key, root)](#module_se/fivebyfive/ortho/extensions..CssHelper+getVar) ⇒ <code>string</code>
     * [.getVarAsColor(key, root)](#module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor) ⇒ <code>ColorRgb</code>
     * [.classNames(element, ...variants)](#module_se/fivebyfive/ortho/extensions..CssHelper+classNames) ⇒ <code>Array.&lt;string&gt;</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVar"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVar"></a>
 
 #### cssHelper.getVar(key, root) ⇒ <code>string</code>
-Get CSS variable with name `key`, if it exists under `root`
+> Get CSS variable with name `key`, if it exists under `root`
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | key | <code>string</code> |  | 
 | root | <code>external:HTMLELement</code> | <code></code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor"></a>
 
 #### cssHelper.getVarAsColor(key, root) ⇒ <code>ColorRgb</code>
-Get CSS variable with name `key`, if it exists under `root`, converted to RGB.
+> Get CSS variable with name `key`, if it exists under `root`, converted to RGB.
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | key | <code>string</code> |  | 
 | root | <code>external:HTMLELement</code> | <code></code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+classNames"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+classNames"></a>
 
 #### cssHelper.classNames(element, ...variants) ⇒ <code>Array.&lt;string&gt;</code>
-Create a list of classnames, consisting of `element` + `element--variant` for every `variants`
+> Create a list of classnames, consisting of `element` + `element--variant` for every `variants`
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>string</code> | 
 | ...variants | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils"></a>
 
 ### se/fivebyfive/ortho/extensions~LinearUtils
-Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
+> Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~LinearUtils`
+
 
 * [~LinearUtils](#module_se/fivebyfive/ortho/extensions..LinearUtils)
     * [.lerp(x, y, a)](#module_se/fivebyfive/ortho/extensions..LinearUtils+lerp) ⇒ <code>Number</code>
@@ -582,10 +600,10 @@ Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive
     * [.rangeMap(map, from, to, val)](#module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap) ⇒ <code>Number</code>
     * [.modLimit(num, max)](#module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit) ⇒ <code>number</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+lerp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+lerp"></a>
 
 #### linearUtils.lerp(x, y, a) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - A value between `x` and `y` at the decimal point `a`.  
 
 | Param | Type | Description |
@@ -598,10 +616,10 @@ Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive
 ```js
 $linear->lerp(0, 10, .5); // => 5
 ```
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+clamp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+clamp"></a>
 
 #### linearUtils.clamp(a, min, max) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - `a` or `min` if `a < min`, or `max` if `a > max`.  
 
 | Param | Type | Default | Description |
@@ -614,10 +632,10 @@ $linear->lerp(0, 10, .5); // => 5
 ```js
 $linear->clamp(10, 2, 5); // => 5
 ```
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+invlerp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+invlerp"></a>
 
 #### linearUtils.invlerp(x, y, a) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - Where `a` falls between `x` and `y` as a ratio
 between `0.0` and `1.0`. @see lerp  
 
@@ -627,12 +645,12 @@ between `0.0` and `1.0`. @see lerp
 | y | <code>Number</code> | 
 | a | <code>Number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+range"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+range"></a>
 
 #### linearUtils.range(x1, y1, x2, y2, a) ⇒ <code>Number</code>
-Converts a number from one range to another
+> Converts a number from one range to another
 
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - The value `a` converted to the value at the same place in `[x2 ... y2]`
 as `a` has in `[x1 ... y1]`  
 
@@ -644,10 +662,10 @@ as `a` has in `[x1 ... y1]`
 | y2 | <code>Number</code> | 
 | a | <code>Number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap"></a>
 
 #### linearUtils.rangeMap(map, from, to, val) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - If `maps` is an array of maps containing at least the keys
 from the string `from` and `to`, representing corresponding values in two ranges,
 return `val` from range `from` fitted to the range `b`.  
@@ -659,25 +677,25 @@ return `val` from range `from` fitted to the range `b`.
 | to | <code>string</code> |  |
 | val | <code>Number</code> |  |
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit"></a>
 
 #### linearUtils.modLimit(num, max) ⇒ <code>number</code>
-Return `num` limited to between `0` and `max`, using modulo
-logic
+> Return `num` limited to between `0` and `max`, using modulo
+> logic
 
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 
 | Param | Type |
 | --- | --- |
 | num | <code>number</code> | 
 | max | <code>number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..PartialColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..PartialColor"></a>
 
 ### se/fivebyfive/ortho/extensions~PartialColor : <code>Object</code>
-An object representing parts of a color in RGBA colorspace
+> An object representing parts of a color in RGBA colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -687,12 +705,12 @@ An object representing parts of a color in RGBA colorspace
 | b | <code>number</code> | Blue |
 | a | <code>number</code> | Alpha |
 
-<a name="module_se/fivebyfive/ortho/extensions..RgbColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..RgbColor"></a>
 
 ### se/fivebyfive/ortho/extensions~RgbColor : <code>Object</code>
-An object representing a color in RGB colorspace
+> An object representing a color in RGB colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -701,12 +719,12 @@ An object representing a color in RGB colorspace
 | g | <code>number</code> | Green |
 | b | <code>number</code> | Blue |
 
-<a name="module_se/fivebyfive/ortho/extensions..RgbaColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..RgbaColor"></a>
 
 ### se/fivebyfive/ortho/extensions~RgbaColor : <code>Object</code>
-An object representing a color in RGBA colorspace
+> An object representing a color in RGBA colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -716,7 +734,8 @@ An object representing a color in RGBA colorspace
 | b | <code>number</code> | Blue |
 | a | <code>number</code> | Alpha |
 
-<a name="module_se/fivebyfive/ortho/extensions"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions"></a>
 
 ## se/fivebyfive/ortho/extensions
 
@@ -773,35 +792,38 @@ An object representing a color in RGBA colorspace
     * [~RgbColor](#module_se/fivebyfive/ortho/extensions..RgbColor) : <code>Object</code>
     * [~RgbaColor](#module_se/fivebyfive/ortho/extensions..RgbaColor) : <code>Object</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~ArrayHelper
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~ArrayHelper`
+
 
 * [~ArrayHelper](#module_se/fivebyfive/ortho/extensions..ArrayHelper)
     * [new ArrayHelper()](#new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new)
     * [.ensureArray(arrOrItem)](#module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray) ⇒ <code>Array.&lt;any&gt;</code>
     * [.repeat(value, length)](#module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat) ⇒ <code>Array.&lt;any&gt;</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..ArrayHelper_new"></a>
 
 #### new ArrayHelper()
-Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+ensureArray"></a>
 
 #### arrayHelper.ensureArray(arrOrItem) ⇒ <code>Array.&lt;any&gt;</code>
-**Kind**: instance method of [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - `arrOrItem` if it is an array, or `[arrOrItem]` if not.  
 
 | Param | Type |
 | --- | --- |
-| arrOrItem | <code>any</code> \| <code>Array.&lt;any&gt;</code> | 
+| arrOrItem | <code>any</code>, <code>Array.&lt;any&gt;</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ArrayHelper+repeat"></a>
 
 #### arrayHelper.repeat(value, length) ⇒ <code>Array.&lt;any&gt;</code>
-**Kind**: instance method of [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - An array containing `value` `length` times.  
 
 | Param | Type |
@@ -809,12 +831,14 @@ Array utilities. Injectable as `$array` from [module:se/fivebyfive/ortho~Orthogo
 | value | <code>any</code> | 
 | length | <code>number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~ObjectHelper
-Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~ObjectHelper`
+
 
 * [~ObjectHelper](#module_se/fivebyfive/ortho/extensions..ObjectHelper)
     * [new ObjectHelper($array)](#new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new)
@@ -829,7 +853,8 @@ Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~O
     * [.toKeyValuePairs(...objects)](#module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs) ⇒ <code>any</code>
     * [.split(obj)](#module_se/fivebyfive/ortho/extensions..ObjectHelper+split) ⇒ <code>Array.&lt;object&gt;</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..ObjectHelper_new"></a>
 
 #### new ObjectHelper($array)
 
@@ -837,13 +862,13 @@ Helper for `object`s. Injectable as `$object` from [module:se/fivebyfive/ortho~O
 | --- | --- |
 | $array | [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper) | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+merge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+merge"></a>
 
 #### objectHelper.merge(target, ...sources) ⇒ <code>object</code>
-Copy the keys and values from the objects `sources` into `target`, overwriting
-existing keys.
+> Copy the keys and values from the objects `sources` into `target`, overwriting
+> existing keys.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 **Returns**: <code>object</code> - `target`  
 
 | Param | Type |
@@ -851,13 +876,13 @@ existing keys.
 | target | <code>object</code> | 
 | ...sources | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+disjunctMerge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+disjunctMerge"></a>
 
 #### objectHelper.disjunctMerge(target, ...sources) ⇒ <code>object</code>
-Copy the keys and values from the objects `sources` into `target`.
-Skip keys that already exist.
+> Copy the keys and values from the objects `sources` into `target`.
+> Skip keys that already exist.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 **Returns**: <code>object</code> - `target`  
 
 | Param | Type |
@@ -865,57 +890,57 @@ Skip keys that already exist.
 | target | <code>object</code> | 
 | ...sources | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+immutableMerge"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+immutableMerge"></a>
 
 #### objectHelper.immutableMerge(...objects) ⇒ <code>object</code>
-Combine `objects` into a new `object` -- returning the result
+> Combine `objects` into a new `object` -- returning the result
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+allKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+allKeys"></a>
 
 #### objectHelper.allKeys(...objects) ⇒ <code>Array.&lt;string&gt;</code>
-Get all unique keys from `objects` as an array.
+> Get all unique keys from `objects` as an array.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+diffKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+diffKeys"></a>
 
 #### objectHelper.diffKeys(a, b) ⇒ <code>Array.&lt;string&gt;</code>
-Get all keys that are only in `a` or only in `b`
+> Get all keys that are only in `a` or only in `b`
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | a | <code>object</code> | 
 | b | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+filterKeys"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+filterKeys"></a>
 
 #### objectHelper.filterKeys(obj, ...keys) ⇒ <code>object</code>
-Return a shallow copy of `obj`, keeping only the values whose keys
-are in `keys`
+> Return a shallow copy of `obj`, keeping only the values whose keys
+> are in `keys`
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | obj | <code>object</code> | 
 | ...keys | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePair"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePair"></a>
 
 #### objectHelper.fromKeyValuePair(key, value) ⇒ <code>object</code>
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -926,36 +951,36 @@ are in `keys`
 ```js
 const obj = fromKeyValuePair('foo', 10); // => obj === {foo: 10} 
 ```
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePairs"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+fromKeyValuePairs"></a>
 
 #### objectHelper.fromKeyValuePairs(...pairs) ⇒ <code>object</code>
-Give an array of arrays, `pairs` representing a list of keys and values,
-create a new object containing those keys and values.
+> Give an array of arrays, `pairs` representing a list of keys and values,
+> create a new object containing those keys and values.
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
-| ...pairs | <code>string</code> \| <code>any</code> | 
+| ...pairs | <code>string</code>, <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+toKeyValuePairs"></a>
 
 #### objectHelper.toKeyValuePairs(...objects) ⇒ <code>any</code>
-Get all keys and values from `objects`, and return them as an array of key/value pairs
+> Get all keys and values from `objects`, and return them as an array of key/value pairs
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
 | ...objects | <code>object</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+split"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..ObjectHelper+split"></a>
 
 #### objectHelper.split(obj) ⇒ <code>Array.&lt;object&gt;</code>
-Split an object into as many parts as the most number of items in any array-value
-contained in the object
+> Split an object into as many parts as the most number of items in any array-value
+> contained in the object
 
-**Kind**: instance method of [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -965,12 +990,14 @@ contained in the object
 ```js
 split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}] 
 ```
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~StringHelper
-Helper functions for handling strings. Injectable as `$string` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helper functions for handling strings. Injectable as `$string` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~StringHelper`
+
 
 * [~StringHelper](#module_se/fivebyfive/ortho/extensions..StringHelper)
     * [new StringHelper($object)](#new_module_se/fivebyfive/ortho/extensions..StringHelper_new)
@@ -981,7 +1008,8 @@ Helper functions for handling strings. Injectable as `$string` from [module:se/f
     * [.snakeToCamel(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel) ⇒ <code>string</code>
     * [.camelToSnake(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake) ⇒ <code>string</code>
 
-<a name="new_module_se/fivebyfive/ortho/extensions..StringHelper_new"></a>
+
+<br><a name="new_module_se/fivebyfive/ortho/extensions..StringHelper_new"></a>
 
 #### new StringHelper($object)
 
@@ -989,78 +1017,80 @@ Helper functions for handling strings. Injectable as `$string` from [module:se/f
 | --- | --- |
 | $object | [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper) | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+sanitize"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+sanitize"></a>
 
 #### stringHelper.sanitize(str) ⇒ <code>string</code>
-Make sure argument is stringy
+> Make sure argument is stringy
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+isEmpty"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+isEmpty"></a>
 
 #### stringHelper.isEmpty(str) ⇒ <code>boolean</code>
-Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
+> Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
-| str | <code>string</code> \| <code>any</code> | 
+| str | <code>string</code>, <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+hexToRgb"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+hexToRgb"></a>
 
 #### stringHelper.hexToRgb(hex) ⇒ <code>RgbColor</code>
-Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
+> Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | hex | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+rgbaToRgb"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+rgbaToRgb"></a>
 
 #### stringHelper.rgbaToRgb(rgba) ⇒ <code>RgbaColor</code>
-Parse a color in RGBA string format.
+> Parse a color in RGBA string format.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | rgba | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel"></a>
 
 #### stringHelper.snakeToCamel(str) ⇒ <code>string</code>
-Convert a string from `snake-case` to `camelCase`.
+> Convert a string from `snake-case` to `camelCase`.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake"></a>
 
 #### stringHelper.camelToSnake(str) ⇒ <code>string</code>
-Convert a string from `camelCase` to `snake-case`.
+> Convert a string from `camelCase` to `snake-case`.
 
-**Kind**: instance method of [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)  
 
 | Param | Type |
 | --- | --- |
 | str | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~DomHelper
-Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
+> Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal)
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~DomHelper`
+
 
 * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
     * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
@@ -1072,12 +1102,12 @@ Helpers for traversing DOM. Injectable as `$dom` from [module:se/fivebyfive/orth
     * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
     * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
 
 #### domHelper.onEvents(element, eventNames, ...callbacks)
-Connect `callbacks` to the list of events in `eventNames` on `element`.
+> Connect `callbacks` to the list of events in `eventNames` on `element`.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -1085,14 +1115,14 @@ Connect `callbacks` to the list of events in `eventNames` on `element`.
 | eventNames | <code>Array.&lt;string&gt;</code> | 
 | ...callbacks | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
 
 #### domHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
-Connect `callbacks` to the list of events in `eventNames` on `element`.
-Also wraps all callbacks in a function that calls `e.preventDefault()' on
-all trigger events.
+> Connect `callbacks` to the list of events in `eventNames` on `element`.
+> Also wraps all callbacks in a function that calls `e.preventDefault()' on
+> all trigger events.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -1100,59 +1130,59 @@ all trigger events.
 | eventNames | <code>Array.&lt;string&gt;</code> | 
 | ...callbacks | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
 
 #### domHelper.getPosition(element) ⇒ <code>Object</code>
-Get x and y coordinates of `element`
+> Get x and y coordinates of `element`
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
 
 #### domHelper.getSize(element) ⇒ <code>Object</code>
-Get dimensions of `element`
+> Get dimensions of `element`
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
 
 #### domHelper.getValue(element) ⇒ <code>string</code>
-Get sanitized value from `element` (assumed to be an input element),
-or empty string if there is no value.
+> Get sanitized value from `element` (assumed to be an input element),
+> or empty string if there is no value.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
 
 #### domHelper.setValue(element, value) ⇒ <code>string</code>
-Set sanitized `value` on `element` (assumed to be an input element),
-or empty string if there is no value.
+> Set sanitized `value` on `element` (assumed to be an input element),
+> or empty string if there is no value.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>external:Element</code> | 
 | value | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
 
 #### domHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
-Create an HTML element.
+> Create an HTML element.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
@@ -1160,36 +1190,38 @@ Create an HTML element.
 | attributes | <code>Object</code> | 
 | ...children | <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
 
 #### domHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
-If `selectOrElement` is an `Element`, return it, otherwise try to find it
-treating `selectOrElement` as a dom query.
+> If `selectOrElement` is an `Element`, return it, otherwise try to find it
+> treating `selectOrElement` as a dom query.
 
-**Kind**: instance method of [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)  
 
 | Param | Type |
 | --- | --- |
-| selectorOrElement | <code>string</code> \| <code>exernal:Element</code> | 
+| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~QueryHelper
-Helper for handling dom querys. Injectable from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal) as `$query`.
+> Helper for handling dom querys. Injectable from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal) as `$query`.
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~QueryHelper`
+
 
 * [~QueryHelper](#module_se/fivebyfive/ortho/extensions..QueryHelper)
     * [.map(root, selector, callback)](#module_se/fivebyfive/ortho/extensions..QueryHelper+map) ⇒ <code>Array.&lt;any&gt;</code>
     * [.queryByAttribute(root, attribute)](#module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute) ⇒ <code>Object</code>
     * [.dataSelectorAll(root, attribute, ...otherAttributes)](#module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll) ⇒ <code>Array.&lt;any&gt;</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+map"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+map"></a>
 
 #### queryHelper.map(root, selector, callback) ⇒ <code>Array.&lt;any&gt;</code>
-Wrapper around `querySelectorAll` allowing you to pass along a callback to call on all elements found
+> Wrapper around `querySelectorAll` allowing you to pass along a callback to call on all elements found
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - The mapped list  
 
 | Param | Type |
@@ -1198,12 +1230,12 @@ Wrapper around `querySelectorAll` allowing you to pass along a callback to call 
 | selector | <code>string</code> | 
 | callback | <code>function</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute"></a>
 
 #### queryHelper.queryByAttribute(root, attribute) ⇒ <code>Object</code>
-Query by attribute name.
+> Query by attribute name.
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Object</code> - all matching elements, plus metadata.  
 
 | Param | Type |
@@ -1211,12 +1243,12 @@ Query by attribute name.
 | root | <code>external:HTMLElement</code> | 
 | attribute | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper+dataSelectorAll"></a>
 
 #### queryHelper.dataSelectorAll(root, attribute, ...otherAttributes) ⇒ <code>Array.&lt;any&gt;</code>
-Query by data-attribute. Optionally adds other attributes to result
+> Query by data-attribute. Optionally adds other attributes to result
 
-**Kind**: instance method of [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)  
 **Returns**: <code>Array.&lt;any&gt;</code> - List of elements, along with index, and attribute values.  
 
 | Param | Type |
@@ -1225,60 +1257,64 @@ Query by data-attribute. Optionally adds other attributes to result
 | attribute | <code>string</code> | 
 | ...otherAttributes | <code>any</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper"></a>
 
 ### se/fivebyfive/ortho/extensions~CssHelper
-Helper for getting css-vars and creating classnames. Injected as `$css` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
+> Helper for getting css-vars and creating classnames. Injected as `$css` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~CssHelper`
+
 
 * [~CssHelper](#module_se/fivebyfive/ortho/extensions..CssHelper)
     * [.getVar(key, root)](#module_se/fivebyfive/ortho/extensions..CssHelper+getVar) ⇒ <code>string</code>
     * [.getVarAsColor(key, root)](#module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor) ⇒ <code>ColorRgb</code>
     * [.classNames(element, ...variants)](#module_se/fivebyfive/ortho/extensions..CssHelper+classNames) ⇒ <code>Array.&lt;string&gt;</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVar"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVar"></a>
 
 #### cssHelper.getVar(key, root) ⇒ <code>string</code>
-Get CSS variable with name `key`, if it exists under `root`
+> Get CSS variable with name `key`, if it exists under `root`
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | key | <code>string</code> |  | 
 | root | <code>external:HTMLELement</code> | <code></code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+getVarAsColor"></a>
 
 #### cssHelper.getVarAsColor(key, root) ⇒ <code>ColorRgb</code>
-Get CSS variable with name `key`, if it exists under `root`, converted to RGB.
+> Get CSS variable with name `key`, if it exists under `root`, converted to RGB.
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type | Default |
 | --- | --- | --- |
 | key | <code>string</code> |  | 
 | root | <code>external:HTMLELement</code> | <code></code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..CssHelper+classNames"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..CssHelper+classNames"></a>
 
 #### cssHelper.classNames(element, ...variants) ⇒ <code>Array.&lt;string&gt;</code>
-Create a list of classnames, consisting of `element` + `element--variant` for every `variants`
+> Create a list of classnames, consisting of `element` + `element--variant` for every `variants`
 
-**Kind**: instance method of [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)  
 
 | Param | Type |
 | --- | --- |
 | element | <code>string</code> | 
 | ...variants | <code>string</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils"></a>
 
 ### se/fivebyfive/ortho/extensions~LinearUtils
-Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
+> Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive/ortho~Orthogonal](module:se/fivebyfive/ortho~Orthogonal).
 
-**Kind**: inner class of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
+**Alias:** `module:se/fivebyfive/ortho/extensions~LinearUtils`
+
 
 * [~LinearUtils](#module_se/fivebyfive/ortho/extensions..LinearUtils)
     * [.lerp(x, y, a)](#module_se/fivebyfive/ortho/extensions..LinearUtils+lerp) ⇒ <code>Number</code>
@@ -1288,10 +1324,10 @@ Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive
     * [.rangeMap(map, from, to, val)](#module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap) ⇒ <code>Number</code>
     * [.modLimit(num, max)](#module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit) ⇒ <code>number</code>
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+lerp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+lerp"></a>
 
 #### linearUtils.lerp(x, y, a) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - A value between `x` and `y` at the decimal point `a`.  
 
 | Param | Type | Description |
@@ -1304,10 +1340,10 @@ Linear interpolation functions. Injected as `$linear` from [module:se/fivebyfive
 ```js
 $linear->lerp(0, 10, .5); // => 5
 ```
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+clamp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+clamp"></a>
 
 #### linearUtils.clamp(a, min, max) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - `a` or `min` if `a < min`, or `max` if `a > max`.  
 
 | Param | Type | Default | Description |
@@ -1320,10 +1356,10 @@ $linear->lerp(0, 10, .5); // => 5
 ```js
 $linear->clamp(10, 2, 5); // => 5
 ```
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+invlerp"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+invlerp"></a>
 
 #### linearUtils.invlerp(x, y, a) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - Where `a` falls between `x` and `y` as a ratio
 between `0.0` and `1.0`. @see lerp  
 
@@ -1333,12 +1369,12 @@ between `0.0` and `1.0`. @see lerp
 | y | <code>Number</code> | 
 | a | <code>Number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+range"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+range"></a>
 
 #### linearUtils.range(x1, y1, x2, y2, a) ⇒ <code>Number</code>
-Converts a number from one range to another
+> Converts a number from one range to another
 
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - The value `a` converted to the value at the same place in `[x2 ... y2]`
 as `a` has in `[x1 ... y1]`  
 
@@ -1350,10 +1386,10 @@ as `a` has in `[x1 ... y1]`
 | y2 | <code>Number</code> | 
 | a | <code>Number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+rangeMap"></a>
 
 #### linearUtils.rangeMap(map, from, to, val) ⇒ <code>Number</code>
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 **Returns**: <code>Number</code> - If `maps` is an array of maps containing at least the keys
 from the string `from` and `to`, representing corresponding values in two ranges,
 return `val` from range `from` fitted to the range `b`.  
@@ -1365,25 +1401,25 @@ return `val` from range `from` fitted to the range `b`.
 | to | <code>string</code> |  |
 | val | <code>Number</code> |  |
 
-<a name="module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..LinearUtils+modLimit"></a>
 
 #### linearUtils.modLimit(num, max) ⇒ <code>number</code>
-Return `num` limited to between `0` and `max`, using modulo
-logic
+> Return `num` limited to between `0` and `max`, using modulo
+> logic
 
-**Kind**: instance method of [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)  
 
 | Param | Type |
 | --- | --- |
 | num | <code>number</code> | 
 | max | <code>number</code> | 
 
-<a name="module_se/fivebyfive/ortho/extensions..PartialColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..PartialColor"></a>
 
 ### se/fivebyfive/ortho/extensions~PartialColor : <code>Object</code>
-An object representing parts of a color in RGBA colorspace
+> An object representing parts of a color in RGBA colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -1393,12 +1429,12 @@ An object representing parts of a color in RGBA colorspace
 | b | <code>number</code> | Blue |
 | a | <code>number</code> | Alpha |
 
-<a name="module_se/fivebyfive/ortho/extensions..RgbColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..RgbColor"></a>
 
 ### se/fivebyfive/ortho/extensions~RgbColor : <code>Object</code>
-An object representing a color in RGB colorspace
+> An object representing a color in RGB colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -1407,12 +1443,12 @@ An object representing a color in RGB colorspace
 | g | <code>number</code> | Green |
 | b | <code>number</code> | Blue |
 
-<a name="module_se/fivebyfive/ortho/extensions..RgbaColor"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions..RgbaColor"></a>
 
 ### se/fivebyfive/ortho/extensions~RgbaColor : <code>Object</code>
-An object representing a color in RGBA colorspace
+> An object representing a color in RGBA colorspace
 
-**Kind**: inner typedef of [<code>se/fivebyfive/ortho/extensions</code>](#module_se/fivebyfive/ortho/extensions)  
 **Properties**
 
 | Name | Type | Description |
@@ -1422,10 +1458,11 @@ An object representing a color in RGBA colorspace
 | b | <code>number</code> | Blue |
 | a | <code>number</code> | Alpha |
 
-<a name="module_se/fivebyfive/ortho/extensions/services"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services"></a>
 
 ## se/fivebyfive/ortho/extensions/services
-All injectable services from [se/fivebyfive/ortho/extensions](#module_se/fivebyfive/ortho/extensions)
+> All injectable services from [se/fivebyfive/ortho/extensions](#module_se/fivebyfive/ortho/extensions)
 
 
 * [se/fivebyfive/ortho/extensions/services](#module_se/fivebyfive/ortho/extensions/services)
@@ -1437,31 +1474,31 @@ All injectable services from [se/fivebyfive/ortho/extensions](#module_se/fivebyf
     * [.$css](#module_se/fivebyfive/ortho/extensions/services.$css) : [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)
     * [.$linear](#module_se/fivebyfive/ortho/extensions/services.$linear) : [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)
 
-<a name="module_se/fivebyfive/ortho/extensions/services.$array"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$array"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$array : [<code>ArrayHelper</code>](#module_se/fivebyfive/ortho/extensions..ArrayHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$object"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$object"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$object : [<code>ObjectHelper</code>](#module_se/fivebyfive/ortho/extensions..ObjectHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$string"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$string"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$string : [<code>StringHelper</code>](#module_se/fivebyfive/ortho/extensions..StringHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$dom"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$dom"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$dom : [<code>DomHelper</code>](#module_se/fivebyfive/ortho/extensions..DomHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$query"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$query"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$query : [<code>QueryHelper</code>](#module_se/fivebyfive/ortho/extensions..QueryHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$css"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$css"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$css : [<code>CssHelper</code>](#module_se/fivebyfive/ortho/extensions..CssHelper)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  
-<a name="module_se/fivebyfive/ortho/extensions/services.$linear"></a>
+
+<br><a name="module_se/fivebyfive/ortho/extensions/services.$linear"></a>
 
 ### se/fivebyfive/ortho/extensions/services.$linear : [<code>LinearUtils</code>](#module_se/fivebyfive/ortho/extensions..LinearUtils)
-**Kind**: static property of [<code>se/fivebyfive/ortho/extensions/services</code>](#module_se/fivebyfive/ortho/extensions/services)  

@@ -1,9 +1,10 @@
 # orthogonal
 Orthogonal is a JavaScript library providing:
- a) dependency injection,
- b) a store,
- c) a cache, &
- d) a bunch of utility methods
+ 
+ 1) dependency injection,
+ 1) a store,
+ 1) a cache, &
+ 1) a bunch of utility methods
 
 The variable `orthogonal` is added to the global scope (I know! I know!),
 which exposes the functionality. 

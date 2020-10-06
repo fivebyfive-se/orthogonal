@@ -111,6 +111,28 @@ const $colorHarmony =
     };
 };
 
+/**
+ * 
+ * @typedef {Object} ColorRGB
+ * @property {number} r
+ * @property {number} g
+ * @property {number} b
+ */
+/**
+ * 
+ * @typedef {Object} ColorHSV
+ * @property {number} h
+ * @property {number} s
+ * @property {number} v
+ */
+/**
+ * 
+ * @typedef {Object} ColorHSL
+ * @property {number} h
+ * @property {number} s
+ * @property {number} l
+ */
+
 const $colorUtil =
 /**
  * @constructs ColorUtil
@@ -128,7 +150,8 @@ const $colorUtil =
         constructor() {
             /**
              * Convert Hex to RGB.
-             * @param {any} hex 
+             * @param {string} hex
+             * @returns {ColorRGB} 
              */
             this.hex_to_rgb = (hex) => {
                 let r = 0, g = 0, b = 0;
@@ -145,8 +168,17 @@ const $colorUtil =
                 return { r: parseInt(r, 16), g: parseInt(r, 16), b: parseInt(b, 16) };
             };
 
+            /**
+             * Convert hex string to HSL
+             * @param {string} hex 
+             * @returns {ColorHSL}
+             */
             this.hex_to_hsl = (hex) => this.rgb_to_hsl(this.hex_to_rgb(hex));
 
+            /**
+             * @param {ColorHSL} param0
+             * @returns {ColorRGB} 
+             */
             this.hsl_to_rgb = ({h, s, l}) => {
                   // Must be fractions of 1
                 const sNorm = s / 100;
@@ -178,8 +210,16 @@ const $colorUtil =
                 return {r, g, b};
             };
 
+            /**
+             * @param {ColorHSL} param0
+             * @returns {string} 
+             */
             this.hsl_to_hex = ({h, s, l}) => this.rgb_to_hex(this.hsl_to_rgb({h, s, l}));
 
+            /**
+             * @param {ColorHSL} param0
+             * @returns {ColorHSV} 
+             */
             this.hsl_to_hsv = ({h, s, l}) => {
                 let newS = s / 100,
                     normL = l / 100;
@@ -192,6 +232,10 @@ const $colorUtil =
                 };
             };
 
+            /**
+             * @param {ColorHSV} param0
+             * @returns {ColorHSL} 
+             */
             this.hsv_to_hsl = ({h, s, v}) => {
                 const normS = s / 100,
                     normV = v / 100;
@@ -211,6 +255,10 @@ const $colorUtil =
                 return {h: +h, s: +(newS * 100).toFixed(1), l: +(l * 100).toFixed(1)};
             };
 
+            /**
+             * @param {ColorRGB} param0
+             * @returns {string} 
+             */
             this.rgb_to_hex = ({r, g, b}) => {
                 let hexR = (r < 0x10 ? '0' : '') + r.toString(16),
                     hexG = (g < 0x10 ? '0' : '') + g.toString(16),
@@ -218,6 +266,10 @@ const $colorUtil =
                 return `#${hexR}${hexG}${hexB}`;
             };
 
+            /**
+             * @param {ColorRGB} param0
+             * @returns {ColorHSL} 
+             */
             this.rgb_to_hsl = ({r, g, b}) => {
                 const rNorm = (r / 255).toFixed(1), 
                     gNorm = (g / 255).toFixed(1),
@@ -261,7 +313,19 @@ const $colorUtil =
 
             const doMap = (map, from, to, val) => +($linear.rangeMap(map, from, to, val) % 361).toFixed(1);
 
+
+            /**
+             * Translate from RYB color space to HSL
+             * @param {number} hue 
+             * @returns {number} 
+             */
             this.rybhue_to_hslhue = (hue) => doMap(ryb_to_hsl_map, 'ryb', 'hsl', hue);
+
+            /**
+             * Translate from HSL color space to RYN
+             * @param {number} hue 
+             * @returns {number} 
+             */
             this.hslhue_to_rybhue = (hue) => doMap(ryb_to_hsl_map, 'hsl', 'ryb', hue);
 
             const col_to_string = (col) => {
@@ -271,6 +335,12 @@ const $colorUtil =
                     .join(', ');
             };
 
+            /**
+             * Convert from any color space to any string format
+             * @param {any} source 
+             * @param {string} type `"hex"`, `"rgb"`, `"hsl"`, or `"hsv"`
+             * @returns {string}
+             */
             this.any_to_string = (source, type='hex') => {
                 const hsl = this.any_to_hsl(source);
                 let res = {};
@@ -292,6 +362,11 @@ const $colorUtil =
                 return `${type}(${col_to_string(res)})`;
             };
 
+            /**
+             * Convert from any color space (include string representations), to HSL.
+             * @param {any} source 
+             * @returns {ColorHSL}
+             */
             this.any_to_hsl = (source) => {
                 if (typeof source === 'string') {
                     if (source.startsWith('#')) {
@@ -340,6 +415,10 @@ const $colorWheel =
      * @class
      */
     class ColorWheel {
+        /**
+         * Create new instance of `ColorWheel`, do be drawn in `canvas`
+         * @param {external:HTMLCanvas} canvas 
+         */
         constructor(canvas) {
             canvas.height = canvas.width = $window.innerHeight / 2;
             const context = canvas.getContext('2d');
@@ -366,6 +445,11 @@ const $colorWheel =
                 { p:  0, l: 100},
             ];
 
+            /**
+             * Calculate the color at the given mouse position
+             * @param {external:MouseEvent} mouseEvent
+             * @returns {ColorHSL}
+             */
             this.color_at = (mouseEvent) => {
                 const x = mouseEvent.offsetX,
                     y = mouseEvent.offsetY;
@@ -378,6 +462,11 @@ const $colorWheel =
                 return { h, s, l };
             };
 
+            /**
+             * Calculate the position of the given color in the color wheel.
+             * @param {ColorHSL} param0 
+             * @returns {{x: number, y: number}}
+             */
             this.color_to_pos = ({h, s, l}) => {
                 const a = $colorUtil.hslhue_to_rybhue(h) * Math.PI / 180;
                 const dS = $linear.rangeMap(map_psl, 's', 'p', s) * radius;
@@ -390,6 +479,10 @@ const $colorWheel =
             };
 
 
+            /**
+             * Draw the color wheel.
+             * @function
+             */
             this.draw = () => {
                 for(let angle = 0; angle <= 360; angle++) {
                     const startAngle = (angle-2)*Math.PI/180;

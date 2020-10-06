@@ -4,7 +4,7 @@
   "description": "Dependency injection for JavaScript",
   "main": "orthogonal.js",
   "scripts": {
-    "doc": "jsdoc2md src/orthogonal.js > doc/orthognal.md && jsdoc2md src/orthogonal.extensions.js > doc/orthogonal.extensions.md && jsdoc2md src/libs/orthogonal.color.js > doc/libs.orthogonal.color.md",
+    "doc": "jsdoc2md src/orthogonal.js > docs/index.md && jsdoc2md src/orthogonal.extensions.js > docs/orthogonal.extensions.md && jsdoc2md src/libs/orthogonal.color.js > docs/libs.orthogonal.color.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

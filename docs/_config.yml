@@ -2,5 +2,5 @@ markdown: GFM
 theme: jekyll-theme-minimal
 title: [Orthogonal.js]
 description: [A JavaScript dependency-injector]
-show_downloads: "false"
+show_downloads: false
 logo: "/assets/logo.png"

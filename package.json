@@ -1,0 +1,28 @@
+{
+  "name": "orthogonal",
+  "version": "0.3.0",
+  "description": "Dependency injection for JavaScript",
+  "main": "orthogonal.js",
+  "scripts": {
+    "doc": "jsdoc2md src/orthogonal.js > doc/orthognal.md && jsdoc2md src/orthogonal.extensions.js > doc/orthogonal.extensions.md && jsdoc2md src/libs/orthogonal.color.js > doc/libs.orthogonal.color.md",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fivebyfive-se/orthogonal.git"
+  },
+  "keywords": [
+    "dependency",
+    "injection",
+    "services"
+  ],
+  "author": "Kalle Räisänen <kalle@fivebyfive.se>",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/fivebyfive-se/orthogonal/issues"
+  },
+  "homepage": "https://github.com/fivebyfive-se/orthogonal#readme",
+  "devDependencies": {
+    "jsdoc-to-markdown": "^6.0.1"
+  }
+}

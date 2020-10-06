@@ -8,11 +8,10 @@
  * @typedef {{h: number, s: number, v: number}} ColorHSV
  */
 
-     //#region $colorHarmony
-$o.register('$colorHarmony', 
+const $colorHarmony = 
 /**
  * @function
- * @param {module:se/fivebyfive/ortho/extensions.ArrayExtension} $array
+ * @param {module:se/fivebyfive/ortho/extensions~ArrayHelper} $array
  * @param {ColorUtil} $colorUtil
  */
 ($array, $colorUtil) => {
@@ -21,6 +20,10 @@ $o.register('$colorHarmony',
      * @class 
      */
     class ColorHarmony {
+        /**
+         * Create new instance of `ColorHarmony`
+         * @param {string} harmony 
+         */
         constructor(harmony = 'custom') {
             const harmonies = {
                 complementary: [0,180, [0, .7, .7], [180, .7, .7], [0, 2, 2]],
@@ -46,7 +49,6 @@ $o.register('$colorHarmony',
             this.harmony = harmony;
 
             /**
-             * 
              * @param {number} old 
              * @param {number} change 
              * @param {number} max 
@@ -86,12 +88,20 @@ $o.register('$colorHarmony',
                 });
             };
 
+            /**
+             * Set harmony to new value
+             * @param {string} newHarmony 
+             */
             this.changeHarmony = (newHarmony) => {
                 if (harmonies.hasOwnProperty(newHarmony)) {
                     this.harmony = newHarmony;
                 }
             };
 
+            /**
+             * Get a list of all available harmonies
+             * @returns {string[]}
+             */
             this.harmonies = () => Object.keys(harmonies);
         }
     }
@@ -99,13 +109,27 @@ $o.register('$colorHarmony',
     return {
         create: (harmony = 'complementary') => new ColorHarmony(harmony)
     };
-});
-//#endregion
+};
 
-//#region $colorUtil
-$o.register('$colorUtil', ($linear) => {
+const $colorUtil =
+/**
+ * @constructs ColorUtil
+ * @param {module:se/fivebyfive/ortho/extensions~LinearUtil} $linear
+ **/ 
+($linear) => {
+    /**
+     * @classdesc Helpers for converting colors among color-spaces
+     * @class
+     */
     class ColorUtil {
+        /**
+         * @hideconstructor
+         */
         constructor() {
+            /**
+             * Convert Hex to RGB.
+             * @param {any} hex 
+             */
             this.hex_to_rgb = (hex) => {
                 let r = 0, g = 0, b = 0;
               
@@ -307,11 +331,14 @@ $o.register('$colorUtil', ($linear) => {
     };
 
     return new ColorUtil();
-});
-//#endregion
+};
 
-//#region $colorWheel
-$o.register('$colorWheel', ($colorUtil, $linear, $window) => {
+const $colorWheel =
+($colorUtil, $linear, $window) => {
+    /**
+     * @classdesc Class for creating color-wheels that can be drawn on an HTML canvas.
+     * @class
+     */
     class ColorWheel {
         constructor(canvas) {
             canvas.height = canvas.width = $window.innerHeight / 2;
@@ -391,6 +418,33 @@ $o.register('$colorWheel', ($colorUtil, $linear, $window) => {
     return {
         create: (canvas) => new ColorWheel(canvas)
     };
-});
-//#endregion
+};
+
+/**
+ * All injectable services from {@link module:se/fivebyfive/ortho/color}
+ * @module se/fivebyfive/ortho/color/services
+ */
+const services = {
+    /** 
+     * @name $colorUtil
+     * @static
+     * @type {module:se/fivebyfive/ortho/color~ColorUtil}
+     **/
+    $colorUtil,
+
+    /** 
+     * @name $colorHarmony
+     * @static
+     * @type {module:se/fivebyfive/ortho/color~ColorHarmony}
+     **/
+    $colorHarmony,
+
+    /** 
+     * @name $colorWheel
+     * @static
+     * @type {module:se/fivebyfive/ortho/color~ColorWheel}
+     **/
+    $colorWheel
+};
+$o.registerAll(services);
 })(orthogonal);

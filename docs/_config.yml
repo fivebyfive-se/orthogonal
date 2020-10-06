@@ -1,5 +1,5 @@
 markdown: GFM
-theme: minimal
+theme: jekyll-theme-minimal
 title: [Orthogonal.js]
 description: [A JavaScript dependency-injector]
 show_downloads: "false"

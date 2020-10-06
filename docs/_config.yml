@@ -1,2 +1,6 @@
 markdown: GFM
 theme: minimal
+title: [Orthogonal.js]
+description: [A JavaScript dependency-injector]
+show_downloads: "false"
+logo: "/assets/logo.png"

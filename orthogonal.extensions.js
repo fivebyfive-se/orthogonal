@@ -1,10 +1,27 @@
-(($o) => {
+
+ ((ortho /* :Orthogonal */) => {
+
+    /** @const {module:se/fivebyfive/ortho.Orthogonal} $o */
+    const $o = ortho;
+
     //#region Helpers
+    /**
+     * @module se/fivebyfive/ortho/extensions
+     */
+
     //#region $array
-    $o.register('$array', () => {
+    /**
+     * @name ArrayExtensions
+     * @classdesc Array utilities 
+     * @class
+     **/
+    $o.register('$array',
+    /** @constructs */
+    () => {
         /**
          * @param {any|any[]} arrOrItem 
          * @return `arrOrItem` if it is an array, or `[arrOrItem]` if not.
+         * @memberof ArrayExtensions#
          */
         const ensureArray = (arrOrItem) => !arrOrItem ? [] : Array.isArray(arrOrItem) ? [...arrOrItem] : [arrOrItem];
 
@@ -13,6 +30,7 @@
          * @param {any} value 
          * @param {number} length
          * @returns {any[]} An array containing `value` `length` times. 
+         * @memberof ArrayExtensions#
          */
         const repeat = (value, length) => {
             const result = [];
@@ -21,18 +39,34 @@
             }
             return result;
         };
-        return { ensureArray, repeat };
+
+        /** @lends ArrayExtensions.prototype */
+        return { 
+            ensureArray, 
+            repeat 
+        };
     });
     //#endregion
 
     //#region $object
-    $o.register('$object', ($array) => {
+    /**
+     * @name ObjectExtensions
+     * @class
+     */
+    $o.register('$object',
+    /**
+     * @constructs
+     * @param {ArrayExtensions} $array
+     */ 
+    ($array) => {
+
         /**
          * Copy the keys and values from the objects `sources` into `target`, overwriting
          * existing keys.
          * @param {object} target 
          * @param  {...object} sources 
          * @returns {object} `target`
+         * @memberof ObjectExtensions#
          */
         const merge = (target, ...sources) => {
             sources.forEach((source) => Object.keys(source).forEach((k) => target[k] = source[k]));
@@ -45,6 +79,7 @@
          * @param {object} target
          * @param  {...object} sources
          * @returns {object} `target`
+         * @memberof ObjectExtensions#
          */
         const disjunctMerge = (target, ...sources) => {
             sources.forEach((source) => {
@@ -62,6 +97,7 @@
          * Combine `objects` into a new `object` -- returning the result 
          * @param  {...object} objects 
          * @returns {object}
+         * @memberof ObjectExtensions#
          */
         const immutableMerge = (...objects) => merge({}, ...objects);
 
@@ -70,6 +106,7 @@
          * Get all unique keys from `objects` as an array.
          * @param  {...object} objects 
          * @return {string[]}
+         * @memberof ObjectExtensions#
          */
         const allKeys = (...objects) => {
             return objects.reduce((keys, obj) => {
@@ -85,6 +122,7 @@
          * @param {object} a 
          * @param {object} b 
          * @returns {string[]}
+         * @memberof ObjectExtensions#
          */
         const diffKeys = (a, b) => allKeys(a, b).filter((k) => a[k] !== b[k]);
 
@@ -94,6 +132,7 @@
          * @param {object} obj 
          * @param  {...string} keys 
          * @returns {object}
+         * @memberof ObjectExtensions#
          */
         const filterKeys = (obj, ...keys) => {
             const result = {};
@@ -109,6 +148,7 @@
          * @param {string} key 
          * @param {any} value
          * @returns {object}
+         * @memberof ObjectExtensions#
          * @example const obj = fromKeyValuePair('foo', 10); // => obj === {foo: 10} 
          */
         const fromKeyValuePair = (key, value) => {
@@ -122,6 +162,7 @@
          * create a new object containing those keys and values. 
          * @param  {...string|any[]} pairs 
          * @returns {object}
+         * @memberof ObjectExtensions#
          */
         const fromKeyValuePairs = (...pairs) => {
             return immutableMerge(...pairs.map((p) => fromKeyValuePair(...p)));
@@ -131,6 +172,7 @@
          * Get all keys and values from `objects`, and return them as an array of key/value pairs
          * @param  {...object} objects 
          * @returns {(string|any)[][]}
+         * @memberof ObjectExtensions#
          */
         const toKeyValuePairs = (...objects) => {
             const pairs = [];
@@ -143,6 +185,7 @@
          * contained in the object 
          * @param {object} obj
          * @returns {object[]}
+         * @memberof ObjectExtensions#
          * @example split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}] 
          */
         const split = (obj) => {
@@ -160,6 +203,9 @@
             return result;
         };
 
+        /**
+         * @lends ObjectExtensions.prototype
+         */
         return {
             merge, disjunctMerge, immutableMerge,
 
@@ -175,15 +221,67 @@
     //#endregion
 
     //#region $string
-    $o.register('$string', ($object) => {
-        // #region Internal
-        const defaultColor = { r: 0, g: 0, b: 0, a: 1.0 };
-        const colorOrDefault = (col) => $object.immutableMerge(defaultColor, col || {});
-        // #endregion
+    /**
+     * @name StringExtensions
+     * @class
+     */
+    $o.register('$string',
+    /**
+     * @constructs StringExtensions
+     * @param {ObjectExtensions} $object
+     */
+     ($object) => {
+        /**
+         * An object representing parts of a color in RGBA colorspace
+         * @typedef {{r?: number, g?: number, b?: number, a?:number}} PartialColor
+         */
+        /**
+         * An object representing a color in RGB colorspace
+         * @typedef {{r: number, g: number, b: number}} RgbColor
+         */
 
+        /**
+         * An object representing a color in RGBA colorspace
+         * @typedef {RgbColor & {a: number}} RgbaColor
+         */
+
+        /**
+         * @private @const {RgbaColor}
+         * @memberof StringExtensions#
+         **/
+        const defaultColor = { r: 0, g: 0, b: 0, a: 1.0 };
+
+        /** 
+         * @private @function
+         * @param {PartialColor} col
+         * @returns {RgbaColor}
+         * @memberof StringExtensions#
+         */
+        const colorOrDefault = (col) => $object.immutableMerge(defaultColor, col || {});
+
+
+        /**
+         * Make sure argument is stringy
+         * @param {string} str
+         * @returns {string}
+         * @memberof StringExtensions# 
+         */
         const sanitize = (str) => (str || '').trim();
+
+        /**
+         * Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
+         * @param {string|any} str
+         * @returns {boolean}
+         * @memberof StringExtensions# 
+         */
         const isEmpty = (str) => sanitize(str) === '';
 
+        /**
+         * Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
+         * @param {string} hex
+         * @returns {RgbColor}
+         * @memberof StringExtensions#
+         */
         const hexToRgb = (hex) => {
             const result = /^#?([a-f\d]{1,2})([a-f\d]{1,2})([a-f\d]{1,2}$)/i.exec(hex),
                 factor = hex.length < 6 ? 0x11 : 1;
@@ -193,6 +291,13 @@
                 b: parseInt(result[3], 16) * factor
             } : null);
         };
+
+        /**
+         * Parse a color in RGBA string format.
+         * @param {string} rgba
+         * @returns {RgbaColor}
+         * @memberof StringExtensions#
+         */
         const rgbaToRgb = (rgba) => {
             const result = /^rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(\s*,\s*((\d+)?(\.\d+)?))?\s*\)$/i.exec(rgba);
 
@@ -204,14 +309,30 @@
             } : null);
         };
 
+        /**
+         * Convert a string from `snake-case` to `camelCase`.
+         * @param {string} str
+         * @returns {string} 
+         * @memberof StringExtensions#
+         */
         const snakeToCamel = (str) => str.replace(
             /([-_][a-z])/g,
             (group) => group.toUpperCase()
                 .replace('-', '')
                 .replace('_', '')
         );
+
+        /**
+         * Convert a string from `camelCase` to `snake-case`.
+         * @param {string} str
+         * @returns {string} 
+         * @memberof StringExtensions#
+         */
         const camelToSnake = (str, sep = '-') => str.split(/(?=[A-Z])/).join(sep).toLowerCase();
 
+        /**
+         * @lends StringExtensions.prototype
+         */
         return {
             hexToRgb, rgbaToRgb,
 
@@ -224,7 +345,26 @@
     
 
     //#region $dom
-    $o.register('$dom', ($array, $document, $window, $string) => {
+    /**
+     * @name DomExtensions
+     * @class
+     */
+    $o.register('$dom', 
+    /**
+     * @constructs DomExtensions
+     * @param {ArrayExtensions} $array
+     * @param {Document} $document
+     * @param {Window} $window
+     * @param {StringExtensions} $string
+     */
+    ($array, $document, $window, $string) => {
+        /**
+         * 
+         * @param {external:Element} element 
+         * @param {string[]} eventNames 
+         * @param  {...function} callbacks
+         * @memberof DomExtensions#
+         */
         const onEvents = (element, eventNames, ...callbacks) => {
             $array.ensureArray(eventNames).forEach((eventName) => {
                 if (eventName === 'now') {
@@ -271,6 +411,9 @@
             return selectorOrElement;
         };
 
+        /**
+         * @lends DomExtensions.prototype
+         */
         return {
             createTag,
 
@@ -338,16 +481,23 @@
     //#endregion
 
     //#region $linear
-    /***
-     * Linear interpolation functions
+    /**
+     * @name LinearUtils
+     * @classdesc Linear interpolation functions
+     * @class
      */
-    $o.register('$linear', () => {
+    $o.register('$linear', 
+    /**
+     * @constructs
+     */
+    () => {
         /**
          * @param x {Number}
          * @param y {Number}
          * @param a {Number} Ratio -- between `0.0` and `1.0` (inclusive)
          * @return {Number} A value between `x` and `y` at the decimal point `a`. 
          * @example $linear->lerp(0, 10, .5); // => 5
+         * @memberof LinearUtils#
          */
         const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -357,6 +507,7 @@
          * @param max {Number} (default: `1`)
          * @return {Number} `a` or `min` if `a < min`, or `max` if `a > max`. 
          * @example $linear->clamp(10, 2, 5); // => 5
+         * @memberof LinearUtils#
          */
         const clamp = (a, min = 0, max = 1) => Math.min(max, Math.max(min, a))
         
@@ -366,6 +517,7 @@
          * @param {Number} a
          * @return {Number} Where `a` falls between `x` and `y` as a ratio
          * between `0.0` and `1.0`. @see lerp
+         * @memberof LinearUtils#
          */
         const invlerp = (x, y, a) => clamp((a - x) / (y - x));
         
@@ -378,6 +530,7 @@
          * @param {Number} a 
          * @return {Number} The value `a` converted to the value at the same place in `[x2 ... y2]`
          * as `a` has in `[x1 ... y1]`
+         * @memberof LinearUtils#
          */
         const range = (x1, y1, x2, y2, a) => lerp(x2, y2, invlerp(x1, y1, a));
 
@@ -390,6 +543,7 @@
          * @return {Number} If `maps` is an array of maps containing at least the keys
          * from the string `from` and `to`, representing corresponding values in two ranges,
          * return `val` from range `from` fitted to the range `b`.
+         * @memberof LinearUtils#
          */
         const rangeMap = (maps, from, to, val) => {
             const min = maps[0][from];
@@ -400,7 +554,7 @@
                 const fromA = maps[i][from],
                     fromB = maps[i+1][from],
                     toA = maps[i][to],
-                    toB = map[i+1][to];
+                    toB = maps[i+1][to];
                 if (val >= fromA && val < fromB) {
                     return range(fromA, fromB, toA, toB, val);
                 }
@@ -408,8 +562,30 @@
             return maps[0][to];
         };
 
+        /**
+         * Return `num` limited to between `0` and `max`, using modulo
+         * logic
+         * @param {number} num 
+         * @param {number} max 
+         * @returns {number}
+         * @memberof LinearUtils#
+         */
+        const modLimit = (num, max) => {
+            if (num > max) {
+                return num % max;
+            }
+            let res = max;
+            while (num < 0) {
+                res = res - num;
+            }
+            return res;
+        }
+
+        /**
+         * @lends LinearUtils.prototype
+         */
         return {
-            lerp, clamp, invlerp, range, rangeMap
+            lerp, clamp, invlerp, range, rangeMap, modLimit
         };
     });
     //#endregion

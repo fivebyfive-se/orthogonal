@@ -4,7 +4,6 @@ import { addGetter } from '../../helpers';
  */
 import {OrthoStoreAction} from './action';
 import {OrthoStoreSelector} from './selector';
-import {OrthoStoreSubscriber} from './subscriber';
 
 /**
  * @classdesc Simple state-management. Dependency-injected as `$store` from {@link module:orthogonal~Orthogonal}.
@@ -15,6 +14,7 @@ export class OrthoStore {
     constructor() {
         /** @private */
         const self = this;
+
         /** @private */
         const store = {
             state: {},
@@ -32,8 +32,10 @@ export class OrthoStore {
 
         /** @private */
         const addAction = (label, transform) => store.actions.push(new OrthoStoreAction(label, transform));
+
         /** @private */
         const findActions = (label) => store.actions.filter((action) => label === action.label);
+
         /** @private */
         const applyActions = (startState, label, payload) => findActions(label).reduce(
             (newState, action) => action.transform(newState, payload, self.dispatch),

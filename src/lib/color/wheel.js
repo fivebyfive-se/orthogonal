@@ -1,4 +1,4 @@
-export function $colorWheel($colorHelper, $linear, $window) {
+export function colorWheelFactory($colorHelper, $linear, $window) {
     /**
      * @classdesc Class for creating color-wheels that can be drawn on an HTML canvas.
      * @class
@@ -100,5 +100,5 @@ export function $colorWheel($colorHelper, $linear, $window) {
 
     return {
         create: (canvas) => new ColorWheel(canvas)
-    };
+    }
 }

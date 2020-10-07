@@ -9,8 +9,12 @@ export class OrthoInjector {
     constructor($expressionParser, container = null, lazyload = true) {
         /** @private */
         const self = this;
+
         /** @private */
         const injectContainer = container || {};
+
+        /** @private */
+        const injectedKeys = Object.keys(injectContainer);
 
         /**
          * Get argument names from `func`
@@ -54,7 +58,10 @@ export class OrthoInjector {
          * @returns {OrthoInjector}
          */
         this.register = (name, dependency) => {
-            injectContainer[name] = dependency;
+            if (!injectedKeys.includes(name)) {
+                injectContainer[name] = dependency;
+                injectedKeys.push(name);
+            }
             return self;
         };
 
@@ -117,6 +124,10 @@ export class OrthoInjector {
          */
         this.callExpression = (expression) => self.injectExpression(expression)();
 
+        /**
+         * @property {any} container
+         * @instance
+         */
         addGetter(this, 'container', () => injectContainer);
     }
 }

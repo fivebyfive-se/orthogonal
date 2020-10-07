@@ -3,7 +3,7 @@
  * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
  */
-export function $dom($array, $window, $document) {
+export function domFactory($array, $window, $document) {
     /**
     * Connect`callbacks` to the list of events in `eventNames` on`element`.
     * @param {external:Element} element

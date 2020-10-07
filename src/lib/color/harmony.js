@@ -1,4 +1,4 @@
-export function $colorHarmony($array, $colorHelper) {
+export function colorHarmonyFactory($array, $colorHelper) {
     /**
      * @classdesc Color-harmony generator
      * @class ColorHarmony

@@ -33,7 +33,7 @@
   * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
   */
-export function $string($object) {
+export function stringFactory($object) {
     /**
      * @private 
      * @const {RgbaColor}

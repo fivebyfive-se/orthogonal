@@ -1,6 +1,6 @@
-import { $colorHelper } from './helper';
-import { $colorHarmony } from './harmony';
-import { $colorWheel } from './wheel';
+import { colorHelperFactory } from './helper';
+import { colorHarmonyFactory } from './harmony';
+import { colorWheelFactory } from './wheel';
 
 /**
  * @module orthogonal/lib/color 
@@ -14,25 +14,18 @@ export const colorServices = {
      * @const {module:orthogonal/lib/color~ColorHarmony} $colorHarmony
      * @memberof module:orthogonal/lib/color/services
      */
-    $colorHarmony,
+    $colorHarmony: colorHarmonyFactory,
 
     /** 
      * @const {module:orthogonal/lib/color~ColorHelper} $colorHelper
      * @memberof module:orthogonal/lib/color/services
      */
-    $colorHelper,
+    $colorHelper: colorHelperFactory,
 
     /** 
-     * @const {module:orthogonal/lib/color~ColorWheel} $colorWheel
+     * @const {module:orthogonal/lib/color~ColorWheelFactory} $colorWheel
      * @memberof module:orthogonal/lib/color/services
      */
-    $colorWheel
+    $colorWheel: colorWheelFactory
 };
 
-/**
- * @function initColor
- * @param {module:orthogonal~Orthogonal} $ortho 
- */
-export default function($ortho) {
-    $ortho.registerAll(colorServices);
-}

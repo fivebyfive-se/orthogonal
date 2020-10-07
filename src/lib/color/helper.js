@@ -23,7 +23,7 @@
  * @memberof module:orthogonal/lib/color
  */
 
-export function $colorHelper($linear) {
+export function colorHelperFactory($linear) {
     /**
      * @classdesc Helpers for converting colors among color-spaces
      * @class

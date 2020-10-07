@@ -1,10 +1,11 @@
-import { $array } from './helpers/array';
-import { $object } from './helpers/object';
-import { $string } from './helpers/string';
-import { $query } from './helpers/query';
-import { $css } from './helpers/css';
-import { $linear } from './helpers/linear-interpolation';
-import { OrthoInjector } from '../../core/services/injector';
+import { arrayFactory } from './helpers/array';
+import { objectFactory } from './helpers/object';
+import { stringFactory } from './helpers/string';
+import { queryFactory } from './helpers/query';
+import { cssFactory } from './helpers/css';
+import { linearFactory } from './helpers/linear-interpolation';
+import { domFactory } from './helpers/dom';
+
 
 /**
  * @module orthogonal/lib/extensions
@@ -18,45 +19,42 @@ export const extensionsServices = {
      * @const {module:orthogonal/lib/extensions~ArrayHelper}
      * @memberof module:orthogonal/lib/extensions/services
      */
-    $array, 
-
-    /**
-     * @const {module:orthogonal/lib/extensions~ObjectHelper}
-     * @memberof module:orthogonal/lib/extensions/services
-     */
-    $object,
-    
-    /**
-     * @const {module:orthogonal/lib/extensions~StringHelper}
-     * @memberof module:orthogonal/lib/extensions/services
-     */
-    $string,
-    
-    /**
-     * @const {module:orthogonal/lib/extensions~QueryHelper}
-     * @memberof module:orthogonal/lib/extensions/services
-     */
-    $query,
+    $array: arrayFactory, 
     
     /**
      * @const {module:orthogonal/lib/extensions~CssHelper}
      * @memberof module:orthogonal/lib/extensions/services
      */
-    $css,
+    $css: cssFactory,
+    
+    /**
+     * @const {module:orthogonal/lib/extensions~DomHelper}
+     * @memberof module:orthogonal/lib/extensions/services
+     */
+    $dom: domFactory,
     
     /**
      * @const {module:orthogonal/lib/extensions~LinearInterpolationHelper}
      * @memberof module:orthogonal/lib/extensions/services
      */
-    $linear
+    $linear: linearFactory,
+
+    /**
+     * @const {module:orthogonal/lib/extensions~ObjectHelper}
+     * @memberof module:orthogonal/lib/extensions/services
+     */
+    $object: objectFactory,
+    
+    /**
+     * @const {module:orthogonal/lib/extensions~QueryHelper}
+     * @memberof module:orthogonal/lib/extensions/services
+     */
+    $query: queryFactory,
+    
+    /**
+     * @const {module:orthogonal/lib/extensions~StringHelper}
+     * @memberof module:orthogonal/lib/extensions/services
+     */
+    $string: stringFactory,
 };
 
-/**
- * Register all extensions services
- * @function init
- * @param {module:orthogonal/services~OrthoInjector} $injector 
- * @memberof module:orthogonal/lib/extensions
- */
-export default function($injector) {
-    $injector.registerAll(extensionsServices);
-}

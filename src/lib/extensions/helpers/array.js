@@ -3,7 +3,7 @@
  * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
  */
-export function $array() {
+export function arrayFactory() {
     /**
       * @param {any|any[]} arrOrItem 
       * @return {any[]} `arrOrItem` if it is an array, or `[arrOrItem]` if not.

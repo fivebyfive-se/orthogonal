@@ -3,7 +3,7 @@
   * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
   */
-export function $object($array) {
+export function objectFactory($array) {
     /**
       * Copy the keys and values from the objects `sources` into `target`, overwriting
       * existing keys.

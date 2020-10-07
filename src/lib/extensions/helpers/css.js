@@ -3,7 +3,7 @@
   * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
   */
-export function $css($string, $document) {
+export function cssFactory($string, $document) {
     /**
      * Get CSS variable with name `key`, if it exists under `root`
      * @param {string} key 

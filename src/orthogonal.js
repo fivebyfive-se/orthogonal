@@ -42,16 +42,19 @@ export class Orthogonal {
         const self = this;
 
         /** @private */
-        const $cache = new OrthoCache();
+        const _cache = new OrthoCache();
 
         /** @private */
-        const $expressionParser = new OrthoExpressionParser($cache);
+        const _expressionParser = new OrthoExpressionParser(_cache);
 
         /** @private */
-        const $injector = new OrthoInjector($expressionParser);
+        const _injector = new OrthoInjector(_expressionParser);
 
         /** @inheritdoc */
-        this.register = $injector.register;
+        this.registerAll = _injector.registerAll;
+
+        /** @inheritdoc */
+        this.register = _injector.register;
 
         /**
          * Wrap `expression` (which can be either a string containing JavaScript or a function)
@@ -61,8 +64,8 @@ export class Orthogonal {
          * @method
          * */
         this.inject = (expression) => typeof expression === 'function'
-            ? $injector.injectFunction(expression)
-            : $injector.injectExpression(expression);
+            ? _injector.injectFunction(expression)
+            : _injector.injectExpression(expression);
 
         /**
         * Wrap `expression` (which can be either a string containing JavaScript or a function)
@@ -74,8 +77,8 @@ export class Orthogonal {
         * @method
         * */
         this.call = (expression, ...args) => typeof expression === 'function'
-            ? $injector.callFunction(expression, ...args)
-            : $injector.callExpression(expression);
+            ? _injector.callFunction(expression, ...args)
+            : _injector.callExpression(expression);
 
         /**
          * Inject dependencies into the function `func`, and call it once
@@ -101,25 +104,25 @@ export class Orthogonal {
              * @const {module:orthogonal~Orthogonal} $ortho
              * @memberof module:orthogonal/core/services
              */
-            $ortho: self,
+            $ortho: () => self,
 
             /**
              * @const {module:orthogonal/core~OrthoCache} $cache
              * @memberof module:orthogonal/core/services
              */
-            $cache,
+            $cache: () => _cache,
 
             /**
              * @const {module:orthogonal/core~OrthoExpressionParser} $expressionParser
              * @memberof module:orthogonal/core/services
              */
-            $expressionParser,
+            $expressionParser: () => _expressionParser,
 
             /**
              * @const {module:orthogonal/core~OrthoInjector} $injector
              * @memberof module:orthogonal/core/services
              */
-            $injector,
+            $injector: () => _injector,
 
             /**
              * @const {module:orthogonal/core~OrthoStore} $store
@@ -140,14 +143,14 @@ export class Orthogonal {
             $document: () => doc,
         };
 
-        $injector.registerAll(rootDependencies);
+        _injector.registerAll(rootDependencies);
     }
 
     /** @private */
     static $instance = null;
 
     /** @private */
-    static create() {
+    static getInstance() {
         if (!Orthogonal.$instance) {
             Orthogonal.$instance = new Orthogonal();
         }
@@ -158,6 +161,14 @@ export class Orthogonal {
 /**
  * Initializes Orthogonal
  * @function orthogonal
- * @memberof module:orthogonal/core/srvices
+ * @memberof module:orthogonal
  */
-export const orthogonal = Orthogonal.create();
+export const orthogonal = Orthogonal.getInstance();
+
+/**
+* @function registerExtensions
+* @param {any} extensions
+* @memberof module:orthogonal
+*/
+export const registerExtensions = (extensions) => orthogonal.registerAll(extensions);
+

@@ -1,4 +1,5 @@
 import { addGetter, dirtyable } from '../../helpers';
+import { OrthoStoreSubscriber } from './subscriber';
 
 /**
  * @classdesc Class representing a selector in {@link module:orthogonal/store~OrthoStore}.

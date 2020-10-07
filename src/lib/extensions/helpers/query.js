@@ -3,7 +3,7 @@
   * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
   */
-export function $query($object, $string, $document) {
+export function queryFactory($object, $string, $document) {
     /**
      * Wrapper around `querySelectorAll` allowing you to pass along a callback to call on all elements found
      * @param {external:HTMLElement} root 

@@ -3,7 +3,7 @@
  * @hideconstructor
  * @memberof module:orthogonal/lib/extensions
  */
-export function $linear() {
+export function linearFactory() {
     /**
      * @param x {Number}
      * @param y {Number}

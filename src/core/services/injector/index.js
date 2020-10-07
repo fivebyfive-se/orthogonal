@@ -1,11 +1,15 @@
 import { addGetter } from '../../helpers';
 
 /**
- * @classdesc Dependency injector. Itself injected as `$injector` from {@link module:orthogonal~Orthogonal}.
- * @class OrthoInjector
- * @memberof module:orthogonal/core
+ * @classdesc Dependency injector. Itself injected as `$injector` from {@link Orthogonal}.
+ * @class
  */
 export class OrthoInjector {
+    /**
+     * @param {OrthoExpressionParser} $expressionParser (injected)
+     * @param {any?} container
+     * @param {boolean} lazyload 
+     */
     constructor($expressionParser, container = null, lazyload = true) {
         /** @private */
         const self = this;

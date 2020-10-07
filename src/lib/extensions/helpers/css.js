@@ -1,7 +1,7 @@
  /**
+  * Helpers for working with CSS
   * @class CssHelper
   * @hideconstructor
- * @memberof module:orthogonal/lib/extensions
   */
 export function cssFactory($string, $document) {
     /**
@@ -9,7 +9,7 @@ export function cssFactory($string, $document) {
      * @param {string} key 
      * @param {external:HTMLELement} root 
      * @returns {string}
-    * @memberof module:orthogonal/lib/extensions~CssHelper
+    * @memberof CssHelper
      */
     const getVar = (key, root = null) => getComputedStyle(root || $document.documentElement).getPropertyValue(key);
 
@@ -18,7 +18,7 @@ export function cssFactory($string, $document) {
      * @param {string} key 
      * @param {external:HTMLELement} root 
      * @returns {ColorRgb}
-     * @memberof module:orthogonal/lib/extensions~CssHelper
+     * @memberof CssHelper
      */
     const getVarAsColor = (key, root = null) => {
         const value = $string.sanitize(getVar(key, root));
@@ -33,7 +33,7 @@ export function cssFactory($string, $document) {
      * @param {string} element 
      * @param  {...string} variants 
      * @returns {string[]}
-     * @memberof module:orthogonal/lib/extensions~CssHelper
+     * @memberof CssHelper
      */
     const classNames = (element, ...variants) => [element, ...variants.map((v) => `${element}--${v}`)];
 

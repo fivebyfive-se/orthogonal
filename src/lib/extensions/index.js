@@ -8,52 +8,42 @@ import { domFactory } from './helpers/dom';
 
 
 /**
- * @module orthogonal/lib/extensions
+ * Injectable services
+ * @namespace extensionsServices
  */
-
- /**
-  * @module orthogonal/lib/extensions/services
-  */
 export const extensionsServices = {
     /**
-     * @const {module:orthogonal/lib/extensions~ArrayHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {ArrayHelper}
      */
     $array: arrayFactory, 
     
     /**
-     * @const {module:orthogonal/lib/extensions~CssHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {CssHelper}
      */
     $css: cssFactory,
     
     /**
-     * @const {module:orthogonal/lib/extensions~DomHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {DomHelper}
      */
     $dom: domFactory,
     
     /**
-     * @const {module:orthogonal/lib/extensions~LinearInterpolationHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {LinearInterpolationHelper}
      */
     $linear: linearFactory,
 
     /**
-     * @const {module:orthogonal/lib/extensions~ObjectHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {ObjectHelper}
      */
     $object: objectFactory,
     
     /**
-     * @const {module:orthogonal/lib/extensions~QueryHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {QueryHelper}
      */
     $query: queryFactory,
     
     /**
-     * @const {module:orthogonal/lib/extensions~StringHelper}
-     * @memberof module:orthogonal/lib/extensions/services
+     * @const {StringHelper}
      */
     $string: stringFactory,
 };

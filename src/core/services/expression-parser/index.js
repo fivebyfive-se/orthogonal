@@ -3,10 +3,13 @@
  * methods for reflection -- parsing functions to see
  * which parameters it has and what they're called.
  * Can be dependency injected as a service via `Orthogonal` as `$expressionParser`.
- * @class OrthoExpressionParser
-  * @memberof module:orthogonal/core
+ * @class
  */
 export class OrthoExpressionParser {
+    /**
+     * @param {OrthoCache} $cache 
+     * @param {function} testVariableFunction 
+     */
     constructor($cache, testVariableFunction = null) {
         /** @private */
         const self = this;

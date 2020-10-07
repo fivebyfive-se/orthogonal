@@ -5,7 +5,6 @@
   * @property {?number} g  Green
   * @property {?number} b  Blue
   * @property {?number} a  Alpha
- * @memberof module:orthogonal/lib/extensions
   */
 
 /**
@@ -14,7 +13,6 @@
  * @property {number} r  Red
  * @property {number} g  Green
  * @property {number} b  Blue
- * @memberof module:orthogonal/lib/extensions
  */
 
 /**
@@ -24,14 +22,13 @@
  * @property {number} g  Green
  * @property {number} b  Blue
  * @property {number} a  Alpha
- * @memberof module:orthogonal/lib/extensions
  */
 
 
  /**
+  * String manipulation
   * @class StringHelper
   * @hideconstructor
- * @memberof module:orthogonal/lib/extensions
   */
 export function stringFactory($object) {
     /**
@@ -50,7 +47,7 @@ export function stringFactory($object) {
      * Make sure argument is stringy
      * @param {string} str
      * @returns {string} 
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const sanitize = (str) => (str || '').trim();
 
@@ -58,7 +55,7 @@ export function stringFactory($object) {
      * Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
      * @param {string|any} str
      * @returns {boolean} 
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const isEmpty = (str) => sanitize(str) === '';
 
@@ -66,7 +63,7 @@ export function stringFactory($object) {
      * Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
      * @param {string} hex
      * @returns {RgbColor}
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const hexToRgb = (hex) => {
         const result = /^#?([a-f\d]{1,2})([a-f\d]{1,2})([a-f\d]{1,2}$)/i.exec(hex),
@@ -82,7 +79,7 @@ export function stringFactory($object) {
      * Parse a color in RGBA string format.
      * @param {string} rgba
      * @returns {RgbaColor}
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const rgbaToRgb = (rgba) => {
         const result = /^rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(\s*,\s*((\d+)?(\.\d+)?))?\s*\)$/i.exec(rgba);
@@ -99,7 +96,7 @@ export function stringFactory($object) {
      * Convert a string from `snake-case` to `camelCase`.
      * @param {string} str
      * @returns {string} 
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const snakeToCamel = (str) => str.replace(
         /([-_][a-z])/g,
@@ -112,7 +109,7 @@ export function stringFactory($object) {
      * Convert a string from `camelCase` to `snake-case`.
      * @param {string} str
      * @returns {string} 
-        * @memberof module:orthogonal/lib/extensions~StringHelper
+        * @memberof StringHelper
      */
     const camelToSnake = (str, sep = '-') => str.split(/(?=[A-Z])/).join(sep).toLowerCase();
 

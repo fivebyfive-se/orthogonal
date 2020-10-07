@@ -1,7 +1,7 @@
 /**
+ * Helpers for handling DOM
  * @class DomHelper
  * @hideconstructor
- * @memberof module:orthogonal/lib/extensions
  */
 export function domFactory($array, $window, $document) {
     /**
@@ -9,7 +9,7 @@ export function domFactory($array, $window, $document) {
     * @param {external:Element} element
     * @param {string[]} eventNames
     * @param  {...function} callbacks
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
     */
     const onEvents = (element, eventNames, ...callbacks) => {
         $array.ensureArray(eventNames).forEach((eventName) => {
@@ -28,7 +28,7 @@ export function domFactory($array, $window, $document) {
      * @param {external:Element} element 
      * @param {string[]} eventNames 
      * @param  {...function} callbacks
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const onEventsWithoutDefault = (element, eventNames, ...callbacks) => {
         onEvents(element, eventNames, ...callbacks.map((cb) => (ev) => {
@@ -42,10 +42,10 @@ export function domFactory($array, $window, $document) {
      * `payloadSelector` is a callback-function, which transforms an element into a payload.
      * @param {external:Node} element 
      * @param {(string|string[])} eventNames 
-     * @param {modules:orthogonal/OrthoStore} store 
+     * @param {OrthoStore} store 
      * @param {string} action 
      * @param {function} payloadSelector 
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const dispatchOnEvent = (element, eventNames, store, action, payloadSelector) => {
         onEventsWithoutDefault(element, eventNames, (ev) => store.dispatch(action, payloadSelector(ev)));
@@ -55,7 +55,7 @@ export function domFactory($array, $window, $document) {
      * Get x and y coordinates of `element`
      * @param {external:Element} element 
      * @returns {{x: number, y: number}}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const getPosition = (element) => {
         const { top, left } = element.getBoundingClientRect();
@@ -68,7 +68,7 @@ export function domFactory($array, $window, $document) {
      * Get dimensions of `element`
      * @param {external:Element} element
      * @returns {{height: number, height: number}}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const getSize = (element) => {
         const [{ height, width }] = element.getClientRects();
@@ -80,7 +80,7 @@ export function domFactory($array, $window, $document) {
      * or empty string if there is no value.
      * @param {external:Element} element 
      * @returns {string}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const getValue = (element) => $string.sanitize(element.value);
 
@@ -90,7 +90,7 @@ export function domFactory($array, $window, $document) {
      * @param {external:Element} element
      * @param {string} value 
      * @returns {string}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const setValue = (element, value) => element.value = $string.sanitize(value);
 
@@ -100,7 +100,7 @@ export function domFactory($array, $window, $document) {
      * @param {Object} attributes 
      * @param  {...any} children 
      * @returns {external:HTMLElement}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const createTag = (tagName, attributes, ...children) => {
         const tag = $document.createElement(tagName);
@@ -115,7 +115,7 @@ export function domFactory($array, $window, $document) {
      * treating `selectOrElement` as a dom query.
      * @param {string|exernal:Element} selectorOrElement 
      * @returns {external:Element}
-    * @memberof module:orthogonal/lib/extensions~DomHelper
+    * @memberof DomHelper
      */
     const ensureElement = (selectorOrElement) => {
         if (typeof selectorOrElement === 'string') {

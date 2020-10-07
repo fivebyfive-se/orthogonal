@@ -2,29 +2,23 @@ import { colorHelperFactory } from './helper';
 import { colorHarmonyFactory } from './harmony';
 import { colorWheelFactory } from './wheel';
 
-/**
- * @module orthogonal/lib/color 
- */
-
  /**
-  * @module orthogonal/lib/color/services
+  * Injectable services
+  * @namespace colorServices
   */
 export const colorServices = {
     /** 
-     * @const {module:orthogonal/lib/color~ColorHarmony} $colorHarmony
-     * @memberof module:orthogonal/lib/color/services
+     * @const {ColorHarmony} $colorHarmony
      */
     $colorHarmony: colorHarmonyFactory,
 
     /** 
-     * @const {module:orthogonal/lib/color~ColorHelper} $colorHelper
-     * @memberof module:orthogonal/lib/color/services
+     * @const {ColorHelper} $colorHelper
      */
     $colorHelper: colorHelperFactory,
 
     /** 
-     * @const {module:orthogonal/lib/color~ColorWheelFactory} $colorWheel
-     * @memberof module:orthogonal/lib/color/services
+     * @const {ColorWheelFactory} $colorWheel
      */
     $colorWheel: colorWheelFactory
 };

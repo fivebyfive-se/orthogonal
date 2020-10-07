@@ -1,8 +1,6 @@
 /**
-  * @classdesc Cache-handler. Service can be dependency inject as `$cache` from 
-  * {@link module:orthogonal~Orthogonal}.
-  * @class OrthoCache
-  * @memberof module:orthogonal/core
+  * @classdesc Cache-handler. Service can be injected as `$cache` from {@link Orthogonal}.
+  * @class
   */
 export class OrthoCache {
     constructor() {

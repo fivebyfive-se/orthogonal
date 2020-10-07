@@ -1,14 +1,9 @@
 /**
- * @module orthogonal/core/helpers
- */
-
-/**
  * Helper function for adding a new getter-method to an object.
  * @function
  * @param {any} obj 
  * @param {string} name 
  * @param {function} handler
- * @memberof module:orthogonal/core/helpers
  */
 export const addGetter = (obj, name, handler) => Object.defineProperty(obj, name, { get: handler });
 
@@ -19,7 +14,6 @@ export const addGetter = (obj, name, handler) => Object.defineProperty(obj, name
  * @param {any} baseObj 
  * @param {string} dirtyProperty 
  * @returns {any} Proxied version of `baseObj`
- * @memberof module:orthogonal/core/helpers
  */
 export const dirtyable = (baseObj = { value: undefined }, dirtyProperty = 'value') => {
     return new Proxy({ ...baseObj, isDirty: false }, {

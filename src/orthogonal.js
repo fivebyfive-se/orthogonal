@@ -1,15 +1,3 @@
-/**
- * The Window interface represents a window containing a DOM document
- * @external Window
- * @see https://developer.mozilla.org/en-US/docs/Web/API/Window
- */
-
- /**
-  * The Document interface represents any web page loaded in the browser 
-  * @external Document
-  * @see https://developer.mozilla.org/en-US/docs/Web/API/Document
-  */
-
 /** @private */
 const win = window || (typeof self === 'object' && self.self === self && self) ||
     (typeof global === 'object' && global.global === global && global) ||
@@ -18,21 +6,14 @@ const win = window || (typeof self === 'object' && self.self === self && self) |
 /** @private */
 const doc = document || window.document || { };
 
-/**
- * @module orthogonal/core
- */
 import { OrthoCache } from './core/services/cache';
 import { OrthoExpressionParser } from './core/services/expression-parser';
 import { OrthoInjector } from './core/services/injector';
 import { OrthoStore } from './core/services/store';
 
 /**
- *  @module orthogonal
- */
-
-/**
  * @classdesc The main entry point
- * @class Orthogonal
+ * @class
  * @augments OrthoInjector
  * @hideconstructor
  */
@@ -61,7 +42,6 @@ export class Orthogonal {
          * in a dependency-injecting function.
          * @param {string|function} expression
          * @return {function}
-         * @method
          * */
         this.inject = (expression) => typeof expression === 'function'
             ? _injector.injectFunction(expression)
@@ -74,7 +54,6 @@ export class Orthogonal {
         * @param {string|function} expression
         * @param {any[]} args
         * @return {any}
-        * @method
         * */
         this.call = (expression, ...args) => typeof expression === 'function'
             ? _injector.callFunction(expression, ...args)
@@ -97,48 +76,42 @@ export class Orthogonal {
 
 
         /**
-         * @module orthogonal/core/services
+         * Injectable services
+         * @namespace rootServices
          */
         const rootDependencies = {
             /**
-             * @const {module:orthogonal~Orthogonal} $ortho
-             * @memberof module:orthogonal/core/services
+             * @const {Orthogonal} $ortho
              */
             $ortho: () => self,
 
             /**
-             * @const {module:orthogonal/core~OrthoCache} $cache
-             * @memberof module:orthogonal/core/services
+             * @const {OrthoCache} $cache
              */
             $cache: () => _cache,
 
             /**
-             * @const {module:orthogonal/core~OrthoExpressionParser} $expressionParser
-             * @memberof module:orthogonal/core/services
+             * @const {OrthoExpressionParser} $expressionParser
              */
             $expressionParser: () => _expressionParser,
 
             /**
-             * @const {module:orthogonal/core~OrthoInjector} $injector
-             * @memberof module:orthogonal/core/services
+             * @const {OrthoInjector} $injector
              */
             $injector: () => _injector,
 
             /**
-             * @const {module:orthogonal/core~OrthoStore} $store
-             * @memberof module:orthogonal/core/services
+             * @const {OrthoStore} $store
              */
             $store: () => new OrthoStore(),
 
             /**
              * @const {external:Window} $window
-             * @memberof module:ortho/core/services
              */
             $window: () => win,
 
             /**
              * @const {external:Document} $document
-             * @memberof module:ortho/core/services
              */
             $document: () => doc,
         };
@@ -161,14 +134,12 @@ export class Orthogonal {
 /**
  * Initializes Orthogonal
  * @function orthogonal
- * @memberof module:orthogonal
  */
 export const orthogonal = Orthogonal.getInstance();
 
 /**
 * @function registerExtensions
 * @param {any} extensions
-* @memberof module:orthogonal
 */
 export const registerExtensions = (extensions) => orthogonal.registerAll(extensions);
 

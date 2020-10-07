@@ -4,7 +4,6 @@
  * @property {number} r
  * @property {number} g
  * @property {number} b
- * @memberof module:orthogonal/lib/color
  */
 /**
  * 
@@ -12,7 +11,6 @@
  * @property {number} h
  * @property {number} s
  * @property {number} v
- * @memberof module:orthogonal/lib/color
  */
 /**
  * 
@@ -20,7 +18,6 @@
  * @property {number} h
  * @property {number} s
  * @property {number} l
- * @memberof module:orthogonal/lib/color
  */
 
 export function colorHelperFactory($linear) {
@@ -28,7 +25,6 @@ export function colorHelperFactory($linear) {
      * @classdesc Helpers for converting colors among color-spaces
      * @class
      * @hideconstructor
-     * @memberof module:orthogonal/lib/color
      */
     class ColorHelper {
         constructor() {

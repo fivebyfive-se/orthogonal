@@ -1,14 +1,10 @@
 import { addGetter } from '../../helpers';
-/**
- * @module orthogonal/core/internal
- */
 import {OrthoStoreAction} from './action';
 import {OrthoStoreSelector} from './selector';
 
 /**
- * @classdesc Simple state-management. Dependency-injected as `$store` from {@link module:orthogonal~Orthogonal}.
- * @class OrthoStore
- * @memberof module:orthogonal/core
+ * @classdesc Simple state-management. Dependency-injected as `$store` from {@link Orthogonal}.
+ * @class
  */
 export class OrthoStore {
     constructor() {

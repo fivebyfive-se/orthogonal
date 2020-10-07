@@ -1,8 +1,7 @@
 export function colorHarmonyFactory($array, $colorHelper) {
     /**
      * @classdesc Color-harmony generator
-     * @class ColorHarmony
-     * @memberof module:orthogonal/lib/color
+     * @class
      * @hideconstructor
      */
     class ColorHarmony {
@@ -52,7 +51,8 @@ export function colorHarmonyFactory($array, $colorHelper) {
              * Calculate colors for `harmony`, starting from `color`
              * @param {string} harmony
              * @param {ColorHSL} color
-             * @returns {ColorHSL[]} - Resulting harmonized list of colors 
+             * @returns {ColorHSL[]} - Resulting harmonized list of colors
+             * @instance
              */
             this.harmonize = (harmony, color) => {
                 return harmonies[harmony].map((mod, i) => {

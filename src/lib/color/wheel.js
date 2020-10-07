@@ -2,7 +2,6 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
     /**
      * @classdesc Class for creating color-wheels that can be drawn on an HTML canvas.
      * @class
-     * @memberof module:orthogonal/lib/color
      */
     class ColorWheel {
         constructor(canvas = null) {

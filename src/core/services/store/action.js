@@ -2,8 +2,7 @@ import { addGetter } from '../../helpers';
 
  /**
  * @classdesc Represents an action in `OrthoStore`
- * @class OrthoStoreAction
- * @memberof module:orthogonal/core/internal
+ * @class
  */
 export class OrthoStoreAction {
     /**

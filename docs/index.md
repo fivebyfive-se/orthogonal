@@ -157,10 +157,10 @@
         * [.any_to_string(source, type)](#module_orthogonal/lib/color.ColorHelper+any_to_string) ⇒ <code>string</code>
         * [.any_to_hsl(source)](#module_orthogonal/lib/color.ColorHelper+any_to_hsl) ⇒ <code>ColorHSL</code>
     * [.ColorWheel](#module_orthogonal/lib/color.ColorWheel)
-        * [new ColorWheel(canvas)](#new_module_orthogonal/lib/color.ColorWheel_new)
+        * [.set_canvas(canvas)](#module_orthogonal/lib/color.ColorWheel+set_canvas)
         * [.color_at(mouseEvent)](#module_orthogonal/lib/color.ColorWheel+color_at) ⇒ <code>ColorHSL</code>
         * [.color_to_pos(param0)](#module_orthogonal/lib/color.ColorWheel+color_to_pos) ⇒ <code>Object</code>
-        * [.draw()](#module_orthogonal/lib/color.ColorWheel+draw)
+        * [.draw(canvas)](#module_orthogonal/lib/color.ColorWheel+draw)
     * [.ColorRGB](#module_orthogonal/lib/color.ColorRGB) : <code>Object</code>
     * [.ColorHSV](#module_orthogonal/lib/color.ColorHSV) : <code>Object</code>
     * [.ColorHSL](#module_orthogonal/lib/color.ColorHSL) : <code>Object</code>
@@ -321,21 +321,19 @@
 
 
 * [.ColorWheel](#module_orthogonal/lib/color.ColorWheel)
-    * [new ColorWheel(canvas)](#new_module_orthogonal/lib/color.ColorWheel_new)
+    * [.set_canvas(canvas)](#module_orthogonal/lib/color.ColorWheel+set_canvas)
     * [.color_at(mouseEvent)](#module_orthogonal/lib/color.ColorWheel+color_at) ⇒ <code>ColorHSL</code>
     * [.color_to_pos(param0)](#module_orthogonal/lib/color.ColorWheel+color_to_pos) ⇒ <code>Object</code>
-    * [.draw()](#module_orthogonal/lib/color.ColorWheel+draw)
+    * [.draw(canvas)](#module_orthogonal/lib/color.ColorWheel+draw)
 
 
-<br><a name="new_module_orthogonal/lib/color.ColorWheel_new"></a>
+<br><a name="module_orthogonal/lib/color.ColorWheel+set_canvas"></a>
 
-#### new ColorWheel(canvas)
-> Create new instance of `ColorWheel`, do be drawn in `canvas`
-
+#### colorWheel.set\_canvas(canvas)
 
 | Param | Type |
 | --- | --- |
-| canvas | <code>external:HTMLCanvas</code> | 
+| canvas | <code>any</code> | 
 
 
 <br><a name="module_orthogonal/lib/color.ColorWheel+color_at"></a>
@@ -362,8 +360,13 @@
 
 <br><a name="module_orthogonal/lib/color.ColorWheel+draw"></a>
 
-#### colorWheel.draw()
+#### colorWheel.draw(canvas)
 > Draw the color wheel.
+
+
+| Param | Type |
+| --- | --- |
+| canvas | <code>any</code> | 
 
 
 <br><a name="module_orthogonal/lib/color.ColorRGB"></a>

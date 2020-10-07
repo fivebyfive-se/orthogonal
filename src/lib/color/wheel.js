@@ -5,35 +5,55 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
      * @memberof module:orthogonal/lib/color
      */
     class ColorWheel {
-        /**
-         * Create new instance of `ColorWheel`, do be drawn in `canvas`
-         * @param {external:HTMLCanvas} canvas 
-         */
-        constructor(canvas) {
-            canvas.height = canvas.width = $window.innerHeight / 2;
-            const context = canvas.getContext('2d');
-            const middle = { x: canvas.width/2, y: canvas.height/2};
-            const radius = Math.min(middle.x, middle.y);
+        constructor(canvas = null) {
+            /** @private */
+            const config = {
+                canvas: null,
+                context: null,
+                middle: {x: 0, y: 0},
+                radius: 0
+            };
+            if (canvas) {
+                this.set_canvas(canvas);
+            }
 
+            /** @private */
             const angle = (x1, y1, x2, y2) => {
                 const a = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
                 return (a + 360) % 360;
             };
+
+            /** @private */
             const distance = (x1, y1, x2, y2) => {
                 return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
             };
+
+            /** @private */
             const map_psl = [
                 { p:  0, s: 0, l: 100},
                 { p: .2, s: 20, l: 65},
                 { p: .5, s: 50, l: 50},
                 { p:  1, s: 100, l: 0}
             ];
+
+            /** @private */
             const map_lp = [
                 { p:  1, l: 0},
                 { p: .5, l: 50},
                 { p: .2, l: 65},
                 { p:  0, l: 100},
             ];
+
+            /**
+             * @param {any} canvas
+             */
+            this.set_canvas = (canvas) => {
+                canvas.height = canvas.width = $window.innerHeight / 2;
+                config.canvas = canvas;
+                config.context = canvas.getContext('2d');
+                config.middle = { x: canvas.width/2, y: canvas.height/2};
+                config.radius = Math.min(middle.x, middle.y);
+            };
 
             /**
              * Calculate the color at the given mouse position
@@ -43,8 +63,8 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
             this.color_at = (mouseEvent) => {
                 const x = mouseEvent.offsetX,
                     y = mouseEvent.offsetY;
-                const a = angle(middle.x, middle.y, x, y);
-                const d = distance(middle.x, middle.y, x, y) /  radius;
+                const a = angle(config.middle.x, config.middle.y, x, y);
+                const d = distance(config.middle.x, config.middle.y, x, y) / config.radius;
                 const h = $colorHelper.rybhue_to_hslhue(a);
                 const s = $linear.rangeMap(map_psl, 'p', 's', d);
                 const l = $linear.rangeMap(map_psl, 'p', 'l', d);
@@ -59,21 +79,26 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
              */
             this.color_to_pos = ({h, s, l}) => {
                 const a = $colorHelper.hslhue_to_rybhue(h) * Math.PI / 180;
-                const dS = $linear.rangeMap(map_psl, 's', 'p', s) * radius;
-                const dL = $linear.rangeMap(map_lp, 'l', 'p', l) * radius;
+                const dS = $linear.rangeMap(map_psl, 's', 'p', s) * config.radius;
+                const dL = $linear.rangeMap(map_lp, 'l', 'p', l) * config.radius;
                 const d = (2* dS + dL) / 3;
                 return {
-                    x: d * Math.cos(a) + middle.x,
-                    y: d * Math.sin(a) + middle.y
+                    x: d * Math.cos(a) + config.middle.x,
+                    y: d * Math.sin(a) + config.middle.y
                 };
             };
 
 
             /**
              * Draw the color wheel.
-             * @function
+             * @param {any?} canvas
              */
-            this.draw = () => {
+            this.draw = (canvas = null) => {
+                if (canvas) {
+                    this.set_canvas(canvas);
+                }
+                const { context, middle, radius } = config;
+
                 for(let angle = 0; angle <= 360; angle++) {
                     const startAngle = (angle-2)*Math.PI/180;
                     const endAngle = angle * Math.PI/180;
@@ -99,6 +124,6 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
     }
 
     return {
-        create: (canvas) => new ColorWheel(canvas)
+        create: (canvas = null) => new ColorWheel(canvas)
     }
 }

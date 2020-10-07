@@ -11,12 +11,12 @@
   */
 
 /** @private */
-window = window || (typeof self === 'object' && self.self === self && self) ||
+const win = window || (typeof self === 'object' && self.self === self && self) ||
     (typeof global === 'object' && global.global === global && global) ||
     this;
 
 /** @private */
-document = document || window.document || { };
+const doc = document || window.document || { };
 
 /**
  * @module orthogonal/core

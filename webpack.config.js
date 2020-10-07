@@ -31,6 +31,7 @@ module.exports = (env, argv) => {
         optimization: {
             minimizer: [new TerserPlugin({
                 terserOptions: {
+                    mangle: false,
                     compress: {
                         drop_console: true,
                     },

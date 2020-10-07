@@ -21,10 +21,9 @@ const $colorHarmony =
      */
     class ColorHarmony {
         /**
-         * Create new instance of `ColorHarmony`
-         * @param {string} harmony 
+         * @hideconstructor
          */
-        constructor(harmony = 'custom') {
+        constructor() {
             const harmonies = {
                 complementary: [0,180, [0, .7, .7], [180, .7, .7], [0, 2, 2]],
                 splitComplementary: [0,150,320, [150, .5, .5], [320, .5, .5]],
@@ -44,9 +43,6 @@ const $colorHarmony =
                 analogous: [0,30,60,90,120],
                 custom: [0, 0, 0, 0, 0]
             };
-
-            /** @private */
-            this.harmony = harmony;
 
             /**
              * @param {number} old 
@@ -70,11 +66,13 @@ const $colorHarmony =
             }
 
             /**
-             * Calculate colors for currently chose harmony
-             * @param {ColorHSL} color 
+             * Calculate colors for `harmony`, starting from `color`
+             * @param {string} harmony
+             * @param {ColorHSL} color
+             * @returns {ColorHSL[]} - Resulting harmonized list of colors 
              */
-            this.harmonize = (color) => {
-                return harmonies[this.harmony].map((mod, i) => {
+            this.harmonize = (harmony, color) => {
+                return harmonies[harmony].map((mod, i) => {
                     if (i === 0) {
                         return color;
                     }
@@ -89,26 +87,20 @@ const $colorHarmony =
             };
 
             /**
-             * Set harmony to new value
-             * @param {string} newHarmony 
+             * Get a list of all available harmonies' names
+             * @returns {string[]}
              */
-            this.changeHarmony = (newHarmony) => {
-                if (harmonies.hasOwnProperty(newHarmony)) {
-                    this.harmony = newHarmony;
-                }
-            };
+            this.harmonyNames = () => Object.keys(harmonies);
 
             /**
              * Get a list of all available harmonies
-             * @returns {string[]}
+             * @returns {{name: string, transformations: number[]}}
              */
-            this.harmonies = () => Object.keys(harmonies);
+            this.harmonies = () => this.harmonyNames().map((name) => ({ name, transformations: harmonies[name] }));
         }
     }
 
-    return {
-        create: (harmony = 'complementary') => new ColorHarmony(harmony)
-    };
+    return new ColorHarmony();
 };
 
 /**

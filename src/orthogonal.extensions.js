@@ -386,6 +386,19 @@
         };
 
         /**
+         * Dispatch `action` on `store` when the given `eventNames` occur.
+         * `payloadSelector` is a callback-function, which transforms an element into a payload.
+         * @param {external:Node} element 
+         * @param {(string|string[])} eventNames 
+         * @param {modules:se/fivebyfive/ortho/OrthoStore} store 
+         * @param {string} action 
+         * @param {function} payloadSelector 
+         */
+        const dispatchOnEvent = (element, eventNames, store, action, payloadSelector) => {
+            onEventsWithoutDefault(element, eventNames, (ev) => store.dispatch(action, payloadSelector(ev)));
+        };
+
+        /**
          * Get x and y coordinates of `element`
          * @param {external:Element} element 
          * @returns {{x: number, y: number}}
@@ -467,6 +480,7 @@
             ensureElement,
 
             onEvents, onEventsWithoutDefault,
+            dispatchOnEvent,
 
             getPosition, getSize,
 

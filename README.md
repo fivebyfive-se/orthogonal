@@ -11,6 +11,9 @@ which exposes the functionality.
  
 ## Some examples:
 
+See, e.g., [klr-monster](https://github.com/fivebyfive-se/klr-monster/blob/master/client/src/js/main.js)
+for a real-world example.
+
 ### Inject a dependency into a function:
 ```js
 function do_expensive_stuff($cache) {

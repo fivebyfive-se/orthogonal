@@ -2,7 +2,7 @@ export function $colorWheel($colorHelper, $linear, $window) {
     /**
      * @classdesc Class for creating color-wheels that can be drawn on an HTML canvas.
      * @class
-     * @memberof module:se/fivebyfive/ortho/lib/color
+     * @memberof module:orthogonal/lib/color
      */
     class ColorWheel {
         /**

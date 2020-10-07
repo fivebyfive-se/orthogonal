@@ -5,7 +5,7 @@
   * @property {?number} g  Green
   * @property {?number} b  Blue
   * @property {?number} a  Alpha
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
   */
 
 /**
@@ -14,7 +14,7 @@
  * @property {number} r  Red
  * @property {number} g  Green
  * @property {number} b  Blue
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
  */
 
 /**
@@ -24,14 +24,14 @@
  * @property {number} g  Green
  * @property {number} b  Blue
  * @property {number} a  Alpha
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
  */
 
 
  /**
   * @class StringHelper
   * @hideconstructor
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
   */
 export function $string($object) {
     /**
@@ -50,7 +50,7 @@ export function $string($object) {
      * Make sure argument is stringy
      * @param {string} str
      * @returns {string} 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const sanitize = (str) => (str || '').trim();
 
@@ -58,7 +58,7 @@ export function $string($object) {
      * Check if argument is empty, i.e. `undefined`, `null`, `''` &c.
      * @param {string|any} str
      * @returns {boolean} 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const isEmpty = (str) => sanitize(str) === '';
 
@@ -66,7 +66,7 @@ export function $string($object) {
      * Convert a color in hex format (e.g. `#fff`, `#00ffee`) to RGB.
      * @param {string} hex
      * @returns {RgbColor}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const hexToRgb = (hex) => {
         const result = /^#?([a-f\d]{1,2})([a-f\d]{1,2})([a-f\d]{1,2}$)/i.exec(hex),
@@ -82,7 +82,7 @@ export function $string($object) {
      * Parse a color in RGBA string format.
      * @param {string} rgba
      * @returns {RgbaColor}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const rgbaToRgb = (rgba) => {
         const result = /^rgba?\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)(\s*,\s*((\d+)?(\.\d+)?))?\s*\)$/i.exec(rgba);
@@ -99,7 +99,7 @@ export function $string($object) {
      * Convert a string from `snake-case` to `camelCase`.
      * @param {string} str
      * @returns {string} 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const snakeToCamel = (str) => str.replace(
         /([-_][a-z])/g,
@@ -112,7 +112,7 @@ export function $string($object) {
      * Convert a string from `camelCase` to `snake-case`.
      * @param {string} str
      * @returns {string} 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~StringHelper
+        * @memberof module:orthogonal/lib/extensions~StringHelper
      */
     const camelToSnake = (str, sep = '-') => str.split(/(?=[A-Z])/).join(sep).toLowerCase();
 

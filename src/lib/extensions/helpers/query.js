@@ -1,7 +1,7 @@
  /**
   * @class QueryHelper
   * @hideconstructor
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
   */
 export function $query($object, $string, $document) {
     /**
@@ -10,7 +10,7 @@ export function $query($object, $string, $document) {
      * @param {string} selector 
      * @param {function} callback 
      * @returns {any[]} The mapped list
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~QueryHelper
+        * @memberof module:orthogonal/lib/extensions~QueryHelper
      */
     const map = (root, selector, callback) => {
         const result = [];
@@ -23,7 +23,7 @@ export function $query($object, $string, $document) {
      * @param {external:HTMLElement} root 
      * @param {string} attribute 
      * @returns {Object} all matching elements, plus metadata.
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~QueryHelper
+        * @memberof module:orthogonal/lib/extensions~QueryHelper
      */
     const queryByAttribute = (root, attribute) => map(
         root, `[${attribute}]`,
@@ -36,7 +36,7 @@ export function $query($object, $string, $document) {
      * @param {string} attribute 
      * @param  {...any} otherAttributes 
      * @returns {any[]} List of elements, along with index, and attribute values.
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~QueryHelper
+        * @memberof module:orthogonal/lib/extensions~QueryHelper
      */
     const dataSelectorAll = (root, attribute, ...otherAttributes) => {
         const attributeName = $string.camelToSnake(attribute).replace('data-'),

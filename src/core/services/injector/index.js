@@ -1,9 +1,9 @@
 import { addGetter } from '../../helpers';
 
 /**
- * @classdesc Dependency injector. Itself injected as `$injector` from {@link module:se/fivebyfive/ortho~Orthogonal}.
+ * @classdesc Dependency injector. Itself injected as `$injector` from {@link module:orthogonal~Orthogonal}.
  * @class OrthoInjector
- * @memberof module:se/fivebyfive/ortho/core
+ * @memberof module:orthogonal/core
  */
 export class OrthoInjector {
     constructor($expressionParser, container = null, lazyload = true) {

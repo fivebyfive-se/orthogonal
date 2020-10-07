@@ -1,7 +1,7 @@
  /**
   * @class ObjectHelper
   * @hideconstructor
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
   */
 export function $object($array) {
     /**
@@ -10,7 +10,7 @@ export function $object($array) {
       * @param {object} target 
       * @param  {...object} sources 
       * @returns {object} `target`
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
       */
     const merge = (target, ...sources) => {
         sources.forEach((source) => Object.keys(source).forEach((k) => target[k] = source[k]));
@@ -23,7 +23,7 @@ export function $object($array) {
      * @param {object} target
      * @param  {...object} sources
      * @returns {object} `target`
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const disjunctMerge = (target, ...sources) => {
         sources.forEach((source) => {
@@ -41,7 +41,7 @@ export function $object($array) {
      * Combine `objects` into a new `object` -- returning the result 
      * @param  {...object} objects 
      * @returns {object}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const immutableMerge = (...objects) => merge({}, ...objects);
 
@@ -50,7 +50,7 @@ export function $object($array) {
      * Get all unique keys from `objects` as an array.
      * @param  {...object} objects 
      * @return {string[]}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const allKeys = (...objects) => {
         return objects.reduce((keys, obj) => {
@@ -66,7 +66,7 @@ export function $object($array) {
      * @param {object} a 
      * @param {object} b 
      * @returns {string[]}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const diffKeys = (a, b) => allKeys(a, b).filter((k) => a[k] !== b[k]);
 
@@ -76,7 +76,7 @@ export function $object($array) {
      * @param {object} obj 
      * @param  {...string} keys 
      * @returns {object}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const filterKeys = (obj, ...keys) => {
         const result = {};
@@ -93,7 +93,7 @@ export function $object($array) {
      * @param {any} value
      * @returns {object}
      * @example const obj = fromKeyValuePair('foo', 10); // => obj === {foo: 10} 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const fromKeyValuePair = (key, value) => {
         const result = {};
@@ -106,7 +106,7 @@ export function $object($array) {
      * create a new object containing those keys and values. 
      * @param  {...(string|any)} pairs 
      * @returns {object}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const fromKeyValuePairs = (...pairs) => {
         return immutableMerge(...pairs.map((p) => fromKeyValuePair(...p)));
@@ -116,7 +116,7 @@ export function $object($array) {
      * Get all keys and values from `objects`, and return them as an array of key/value pairs
      * @param  {...object} objects 
      * @returns {any}
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const toKeyValuePairs = (...objects) => {
         const pairs = [];
@@ -130,7 +130,7 @@ export function $object($array) {
      * @param {object} obj
      * @returns {object[]}
      * @example split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}] 
-        * @memberof module:se/fivebyfive/ortho/lib/extensions~ObjectHelper
+        * @memberof module:orthogonal/lib/extensions~ObjectHelper
      */
     const split = (obj) => {
         const result = [{}];

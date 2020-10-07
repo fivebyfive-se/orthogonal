@@ -2,7 +2,7 @@ export function $colorHarmony($array, $colorHelper) {
     /**
      * @classdesc Color-harmony generator
      * @class ColorHarmony
-     * @memberof module:se/fivebyfive/ortho/lib/color
+     * @memberof module:orthogonal/lib/color
      * @hideconstructor
      */
     class ColorHarmony {

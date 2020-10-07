@@ -1,5 +1,5 @@
 /**
- * @module se/fivebyfive/ortho/core/helpers
+ * @module orthogonal/core/helpers
  */
 
 /**
@@ -8,7 +8,7 @@
  * @param {any} obj 
  * @param {string} name 
  * @param {function} handler
- * @memberof module:se/fivebyfive/ortho/core/helpers
+ * @memberof module:orthogonal/core/helpers
  */
 export const addGetter = (obj, name, handler) => Object.defineProperty(obj, name, { get: handler });
 
@@ -19,7 +19,7 @@ export const addGetter = (obj, name, handler) => Object.defineProperty(obj, name
  * @param {any} baseObj 
  * @param {string} dirtyProperty 
  * @returns {any} Proxied version of `baseObj`
- * @memberof module:se/fivebyfive/ortho/core/helpers
+ * @memberof module:orthogonal/core/helpers
  */
 export const dirtyable = (baseObj = { value: undefined }, dirtyProperty = 'value') => {
     return new Proxy({ ...baseObj, isDirty: false }, {

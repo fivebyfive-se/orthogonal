@@ -1,6 +1,25 @@
+/**
+ * The Window interface represents a window containing a DOM document
+ * @external Window
+ * @see https://developer.mozilla.org/en-US/docs/Web/API/Window
+ */
+
+ /**
+  * The Document interface represents any web page loaded in the browser 
+  * @external Document
+  * @see https://developer.mozilla.org/en-US/docs/Web/API/Document
+  */
+
+/** @private */
+const win = (typeof self === 'object' && self.self === self && self) ||
+    (typeof global === 'object' && global.global === global && global) ||
+    this;
+
+/** @private */
+const doc = win.document || { };
 
 /**
- * @module se/fivebyfive/ortho/core
+ * @module orthogonal/core
  */
 import { OrthoCache } from './core/services/cache';
 import { OrthoExpressionParser } from './core/services/expression-parser';
@@ -8,7 +27,7 @@ import { OrthoInjector } from './core/services/injector';
 import { OrthoStore } from './core/services/store';
 
 /**
- *  @module se/fivebyfive/ortho
+ *  @module orthogonal
  */
 
 /**
@@ -75,38 +94,50 @@ export class Orthogonal {
 
 
         /**
-         * @module se/fivebyfive/ortho/core/services
+         * @module orthogonal/core/services
          */
         const rootDependencies = {
             /**
-             * @const {module:se/fivebyfive/ortho~Orthogonal} $ortho
-             * @memberof module:se/fivebyfive/ortho/core/services
+             * @const {module:orthogonal~Orthogonal} $ortho
+             * @memberof module:orthogonal/core/services
              */
             $ortho: self,
 
             /**
-             * @const {module:se/fivebyfive/ortho/core~OrthoCache} $cache
-             * @memberof module:se/fivebyfive/ortho/core/services
+             * @const {module:orthogonal/core~OrthoCache} $cache
+             * @memberof module:orthogonal/core/services
              */
             $cache,
 
             /**
-             * @const {module:se/fivebyfive/ortho/core~OrthoExpressionParser} $expressionParser
-             * @memberof module:se/fivebyfive/ortho/core/services
+             * @const {module:orthogonal/core~OrthoExpressionParser} $expressionParser
+             * @memberof module:orthogonal/core/services
              */
             $expressionParser,
 
             /**
-             * @const {module:se/fivebyfive/ortho/core~OrthoInjector} $injector
-             * @memberof module:se/fivebyfive/ortho/core/services
+             * @const {module:orthogonal/core~OrthoInjector} $injector
+             * @memberof module:orthogonal/core/services
              */
             $injector,
 
             /**
-             * @const {module:se/fivebyfive/ortho/core~OrthoStore} $store
-             * @memberof module:se/fivebyfive/ortho/core/services
+             * @const {module:orthogonal/core~OrthoStore} $store
+             * @memberof module:orthogonal/core/services
              */
-            $store: () => new OrthoStore()
+            $store: () => new OrthoStore(),
+
+            /**
+             * @const {external:Window} $window
+             * @memberof module:ortho/core/services
+             */
+            $window: () => win,
+
+            /**
+             * @const {external:Document} $document
+             * @memberof module:ortho/core/services
+             */
+            $document: () => doc,
         };
 
         $injector.registerAll(rootDependencies);
@@ -127,6 +158,6 @@ export class Orthogonal {
 /**
  * Initializes Orthogonal
  * @function orthogonal
- * @memberof module:se/fivebyfive/ortho/core/srvices
+ * @memberof module:orthogonal/core/srvices
  */
 export const orthogonal = Orthogonal.create();

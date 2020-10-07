@@ -1,15 +1,15 @@
 import { addGetter } from '../../helpers';
 /**
- * @module se/fivebyfive/ortho/core/internal
+ * @module orthogonal/core/internal
  */
 import {OrthoStoreAction} from './action';
 import {OrthoStoreSelector} from './selector';
 import {OrthoStoreSubscriber} from './subscriber';
 
 /**
- * @classdesc Simple state-management. Dependency-injected as `$store` from {@link module:se/fivebyfive/ortho~Orthogonal}.
+ * @classdesc Simple state-management. Dependency-injected as `$store` from {@link module:orthogonal~Orthogonal}.
  * @class OrthoStore
- * @memberof module:se/fivebyfive/ortho/core
+ * @memberof module:orthogonal/core
  */
 export class OrthoStore {
     constructor() {

@@ -4,7 +4,7 @@
  * @property {number} r
  * @property {number} g
  * @property {number} b
- * @memberof module:se/fivebyfive/ortho/lib/color
+ * @memberof module:orthogonal/lib/color
  */
 /**
  * 
@@ -12,7 +12,7 @@
  * @property {number} h
  * @property {number} s
  * @property {number} v
- * @memberof module:se/fivebyfive/ortho/lib/color
+ * @memberof module:orthogonal/lib/color
  */
 /**
  * 
@@ -20,7 +20,7 @@
  * @property {number} h
  * @property {number} s
  * @property {number} l
- * @memberof module:se/fivebyfive/ortho/lib/color
+ * @memberof module:orthogonal/lib/color
  */
 
 export function $colorHelper($linear) {
@@ -28,7 +28,7 @@ export function $colorHelper($linear) {
      * @classdesc Helpers for converting colors among color-spaces
      * @class
      * @hideconstructor
-     * @memberof module:se/fivebyfive/ortho/lib/color
+     * @memberof module:orthogonal/lib/color
      */
     class ColorHelper {
         constructor() {

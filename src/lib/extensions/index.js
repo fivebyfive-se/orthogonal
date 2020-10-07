@@ -7,46 +7,46 @@ import { $linear } from './helpers/linear-interpolation';
 import { OrthoInjector } from '../../core/services/injector';
 
 /**
- * @module se/fivebyfive/ortho/lib/extensions
+ * @module orthogonal/lib/extensions
  */
 
  /**
-  * @module se/fivebyfive/ortho/lib/extensions/services
+  * @module orthogonal/lib/extensions/services
   */
 export const extensionsServices = {
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~ArrayHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~ArrayHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $array, 
 
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~ObjectHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~ObjectHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $object,
     
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~StringHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~StringHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $string,
     
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~QueryHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~QueryHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $query,
     
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~CssHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~CssHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $css,
     
     /**
-     * @const {module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper}
-     * @memberof module:se/fivebyfive/ortho/lib/extensions/services
+     * @const {module:orthogonal/lib/extensions~LinearInterpolationHelper}
+     * @memberof module:orthogonal/lib/extensions/services
      */
     $linear
 };
@@ -54,8 +54,8 @@ export const extensionsServices = {
 /**
  * Register all extensions services
  * @function init
- * @param {module:se/fivebyfive/ortho/services~OrthoInjector} $injector 
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @param {module:orthogonal/services~OrthoInjector} $injector 
+ * @memberof module:orthogonal/lib/extensions
  */
 export default function($injector) {
     $injector.registerAll(extensionsServices);

@@ -1,8 +1,8 @@
 /**
   * @classdesc Cache-handler. Service can be dependency inject as `$cache` from 
-  * {@link module:se/fivebyfive/ortho~Orthogonal}.
+  * {@link module:orthogonal~Orthogonal}.
   * @class OrthoCache
-  * @memberof module:se/fivebyfive/ortho/core
+  * @memberof module:orthogonal/core
   */
 export class OrthoCache {
     constructor() {

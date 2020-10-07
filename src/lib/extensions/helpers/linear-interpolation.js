@@ -1,7 +1,7 @@
 /**
  * @class LinearInterpolationHelper
  * @hideconstructor
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
  */
 export function $linear() {
     /**
@@ -10,7 +10,7 @@ export function $linear() {
      * @param a {Number} Ratio -- between `0.0` and `1.0` (inclusive)
      * @return {Number} A value between `x` and `y` at the decimal point `a`. 
      * @example $linear->lerp(0, 10, .5); // => 5
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const lerp = (x, y, a) => x * (1 - a) + y * a;
 
@@ -20,7 +20,7 @@ export function $linear() {
      * @param max {Number} (default: `1`)
      * @return {Number} `a` or `min` if `a < min`, or `max` if `a > max`. 
      * @example $linear->clamp(10, 2, 5); // => 5
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const clamp = (a, min = 0, max = 1) => Math.min(max, Math.max(min, a))
 
@@ -30,7 +30,7 @@ export function $linear() {
      * @param {Number} a
      * @return {Number} Where `a` falls between `x` and `y` as a ratio
      * between `0.0` and `1.0`. @see lerp
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const invlerp = (x, y, a) => clamp((a - x) / (y - x));
 
@@ -43,7 +43,7 @@ export function $linear() {
      * @param {Number} a 
      * @return {Number} The value `a` converted to the value at the same place in `[x2 ... y2]`
      * as `a` has in `[x1 ... y1]`
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const range = (x1, y1, x2, y2, a) => lerp(x2, y2, invlerp(x1, y1, a));
 
@@ -56,7 +56,7 @@ export function $linear() {
      * @return {Number} If `maps` is an array of maps containing at least the keys
      * from the string `from` and `to`, representing corresponding values in two ranges,
      * return `val` from range `from` fitted to the range `b`.
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const rangeMap = (maps, from, to, val) => {
         const min = maps[0][from];
@@ -81,7 +81,7 @@ export function $linear() {
      * @param {number} num 
      * @param {number} max 
      * @returns {number}
-    * @memberof module:se/fivebyfive/ortho/lib/extensions~LinearInterpolationHelper
+    * @memberof module:orthogonal/lib/extensions~LinearInterpolationHelper
      */
     const modLimit = (num, max) => {
         if (num > max) {

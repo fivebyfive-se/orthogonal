@@ -3,7 +3,7 @@ import { addGetter } from '../../helpers';
 /**
  * @classdesc representing a subscriber in `OrthoStore`
  * @class OrthoStoreSubscriber
- * @memberof module:se/fivebyfive/ortho/core/internal
+ * @memberof module:orthogonal/core/internal
  */
 export class OrthoStoreSubscriber {
     /**

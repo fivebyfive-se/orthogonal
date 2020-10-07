@@ -1,9 +1,9 @@
 import { addGetter, dirtyable } from '../../helpers';
 
 /**
- * @classdesc Class representing a selector in {@link module:se/fivebyfive/ortho/store~OrthoStore}.
+ * @classdesc Class representing a selector in {@link module:orthogonal/store~OrthoStore}.
  * @class OrthoStoreSelector
- * @memberof module:se/fivebyfive/ortho/core/internal
+ * @memberof module:orthogonal/core/internal
  */
 export class OrthoStoreSelector {
     /**

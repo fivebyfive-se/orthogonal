@@ -1,13 +1,13 @@
 /**
  * @class ArrayHelper
  * @hideconstructor
- * @memberof module:se/fivebyfive/ortho/lib/extensions
+ * @memberof module:orthogonal/lib/extensions
  */
 export function $array() {
     /**
       * @param {any|any[]} arrOrItem 
       * @return {any[]} `arrOrItem` if it is an array, or `[arrOrItem]` if not.
-      * @memberof module:se/fivebyfive/ortho/lib/extensions~ArrayHelper
+      * @memberof module:orthogonal/lib/extensions~ArrayHelper
       */
     const ensureArray = (arrOrItem) => !arrOrItem ? [] : Array.isArray(arrOrItem) ? [...arrOrItem] : [arrOrItem];
 
@@ -16,7 +16,7 @@ export function $array() {
      * @param {any} value 
      * @param {number} length
      * @returns {any[]} An array containing `value` `length` times. 
-     * @memberof module:se/fivebyfive/ortho/lib/extensions~ArrayHelper
+     * @memberof module:orthogonal/lib/extensions~ArrayHelper
      */
     const repeat = (value, length) => {
         const result = [];

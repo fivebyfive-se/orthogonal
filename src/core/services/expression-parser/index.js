@@ -4,7 +4,7 @@
  * which parameters it has and what they're called.
  * Can be dependency injected as a service via `Orthogonal` as `$expressionParser`.
  * @class OrthoExpressionParser
-  * @memberof module:se/fivebyfive/ortho/core
+  * @memberof module:orthogonal/core
  */
 export class OrthoExpressionParser {
     constructor($cache, testVariableFunction = null) {

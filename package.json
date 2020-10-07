@@ -1,6 +1,6 @@
 {
   "name": "orthogonal",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "Dependency injection for JavaScript",
   "main": "dist/orthogonal.min.js",
   "scripts": {

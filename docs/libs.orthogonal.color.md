@@ -22,10 +22,9 @@
 
 * [se/fivebyfive/ortho/color](#module_se/fivebyfive/ortho/color)
     * [~ColorHarmony](#module_se/fivebyfive/ortho/color..ColorHarmony)
-        * [new ColorHarmony(harmony)](#new_module_se/fivebyfive/ortho/color..ColorHarmony_new)
-        * [.harmonize(color)](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonize)
-        * [.changeHarmony(newHarmony)](#module_se/fivebyfive/ortho/color..ColorHarmony+changeHarmony)
-        * [.harmonies()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonies) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.harmonize(harmony, color)](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonize) ⇒ <code>Array.&lt;ColorHSL&gt;</code>
+        * [.harmonyNames()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonyNames) ⇒ <code>Array.&lt;string&gt;</code>
+        * [.harmonies()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonies) ⇒ <code>Object</code>
     * [~ColorUtil](#module_se/fivebyfive/ortho/color..ColorUtil)
         * [.hex_to_rgb(hex)](#module_se/fivebyfive/ortho/color..ColorUtil+hex_to_rgb) ⇒ <code>ColorRGB</code>
         * [.hex_to_hsl(hex)](#module_se/fivebyfive/ortho/color..ColorUtil+hex_to_hsl) ⇒ <code>ColorHSL</code>
@@ -57,48 +56,33 @@
 
 
 * [~ColorHarmony](#module_se/fivebyfive/ortho/color..ColorHarmony)
-    * [new ColorHarmony(harmony)](#new_module_se/fivebyfive/ortho/color..ColorHarmony_new)
-    * [.harmonize(color)](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonize)
-    * [.changeHarmony(newHarmony)](#module_se/fivebyfive/ortho/color..ColorHarmony+changeHarmony)
-    * [.harmonies()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonies) ⇒ <code>Array.&lt;string&gt;</code>
-
-
-<br><a name="new_module_se/fivebyfive/ortho/color..ColorHarmony_new"></a>
-
-#### new ColorHarmony(harmony)
-> Create new instance of `ColorHarmony`
-
-
-| Param | Type | Default |
-| --- | --- | --- |
-| harmony | <code>string</code> | <code>&quot;custom&quot;</code> | 
+    * [.harmonize(harmony, color)](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonize) ⇒ <code>Array.&lt;ColorHSL&gt;</code>
+    * [.harmonyNames()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonyNames) ⇒ <code>Array.&lt;string&gt;</code>
+    * [.harmonies()](#module_se/fivebyfive/ortho/color..ColorHarmony+harmonies) ⇒ <code>Object</code>
 
 
 <br><a name="module_se/fivebyfive/ortho/color..ColorHarmony+harmonize"></a>
 
-#### colorHarmony.harmonize(color)
-> Calculate colors for currently chose harmony
+#### colorHarmony.harmonize(harmony, color) ⇒ <code>Array.&lt;ColorHSL&gt;</code>
+> Calculate colors for `harmony`, starting from `color`
 
+**Returns**: <code>Array.&lt;ColorHSL&gt;</code> - - Resulting harmonized list of colors  
 
 | Param | Type |
 | --- | --- |
+| harmony | <code>string</code> | 
 | color | <code>ColorHSL</code> | 
 
 
-<br><a name="module_se/fivebyfive/ortho/color..ColorHarmony+changeHarmony"></a>
+<br><a name="module_se/fivebyfive/ortho/color..ColorHarmony+harmonyNames"></a>
 
-#### colorHarmony.changeHarmony(newHarmony)
-> Set harmony to new value
-
-
-| Param | Type |
-| --- | --- |
-| newHarmony | <code>string</code> | 
+#### colorHarmony.harmonyNames() ⇒ <code>Array.&lt;string&gt;</code>
+> Get a list of all available harmonies' names
 
 
 <br><a name="module_se/fivebyfive/ortho/color..ColorHarmony+harmonies"></a>
 
-#### colorHarmony.harmonies() ⇒ <code>Array.&lt;string&gt;</code>
+#### colorHarmony.harmonies() ⇒ <code>Object</code>
 > Get a list of all available harmonies
 
 

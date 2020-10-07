@@ -13,9 +13,6 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
                 middle: {x: 0, y: 0},
                 radius: 0
             };
-            if (canvas) {
-                this.set_canvas(canvas);
-            }
 
             /** @private */
             const angle = (x1, y1, x2, y2) => {
@@ -120,6 +117,11 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
                 context.strokeStyle= 'white';
                 context.stroke();
             };
+
+
+            if (canvas) {
+                this.set_canvas(canvas);
+            }
         }
     }
 

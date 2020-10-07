@@ -1,114 +1,10 @@
-(($o) => {
-/**
- * @module se/fivebyfive/ortho/color
- */
-
-/**
- * @typedef {{h: number, s: number, l: number}} ColorHSL
- * @typedef {{h: number, s: number, v: number}} ColorHSV
- */
-
-const $colorHarmony = 
-/**
- * @function
- * @param {module:se/fivebyfive/ortho/extensions~ArrayHelper} $array
- * @param {ColorUtil} $colorUtil
- */
-($array, $colorUtil) => {
-    /**
-     * @classdesc Color-harmony generator
-     * @class 
-     */
-    class ColorHarmony {
-        /**
-         * @hideconstructor
-         */
-        constructor() {
-            const harmonies = {
-                complementary: [0,180, [0, .7, .7], [180, .7, .7], [0, 2, 2]],
-                splitComplementary: [0,150,320, [150, .5, .5], [320, .5, .5]],
-                splitComplementaryCW: [0,150,300, [150, 2, 2], [300, 2, 2]],
-                splitComplementaryCCW: [0,60,210, [60, .25, .25], [210, .25, .25]],
-                triadic: [0,120,240, [120, .5, .5], [0, .5, .5]],
-                clash: [0,90,270, [105, 1.5, 1.5], [205, 1.5, 1.5]],
-                tetradic: [0,90,180,270, [0, .5, .5]],
-                fourToneCW: [0,60,180,240, [0, .5, .5]],
-                fourToneCCW: [0,120,180,300, [180, .5, .5]],
-                fiveToneA: [0,115,155,205,245],
-                fiveToneB: [0,40,90,130,245],
-                fiveToneC: [0,50,90,205,320],
-                fiveToneD: [0,40,155,270,310],
-                fiveToneE: [0,115,230,270,320],
-                neutral: [0,15,30,45,60],
-                analogous: [0,30,60,90,120],
-                custom: [0, 0, 0, 0, 0]
-            };
-
-            /**
-             * @param {number} old 
-             * @param {number} change 
-             * @param {number} max 
-             */
-            const modvalue = (old, change, max = 100) => {
-                if (!change) {
-                    return old;
-                }
-                let newVal = old;
-                if (Math.abs(change) < 3) {
-                    newVal *= change;
-                } else {
-                    newVal += change;
-                }
-                while (newVal < 0) {
-                    newVal += max;
-                }
-                return newVal % (max + 1);
-            }
-
-            /**
-             * Calculate colors for `harmony`, starting from `color`
-             * @param {string} harmony
-             * @param {ColorHSL} color
-             * @returns {ColorHSL[]} - Resulting harmonized list of colors 
-             */
-            this.harmonize = (harmony, color) => {
-                return harmonies[harmony].map((mod, i) => {
-                    if (i === 0) {
-                        return color;
-                    }
-                    let [h, s, l] = $array.ensureArray(mod).concat($array.repeat(0, 3));
-                    const newH = h === 0 ? color.h : $colorUtil.rybhue_to_hslhue(modvalue($colorUtil.hslhue_to_rybhue(color.h), h, 360));
-                    return {
-                        h: +newH,
-                        s: +modvalue(color.s, s, 100),
-                        l: +modvalue(color.l, l, 100)
-                    };
-                });
-            };
-
-            /**
-             * Get a list of all available harmonies' names
-             * @returns {string[]}
-             */
-            this.harmonyNames = () => Object.keys(harmonies);
-
-            /**
-             * Get a list of all available harmonies
-             * @returns {{name: string, transformations: number[]}}
-             */
-            this.harmonies = () => this.harmonyNames().map((name) => ({ name, transformations: harmonies[name] }));
-        }
-    }
-
-    return new ColorHarmony();
-};
-
 /**
  * 
  * @typedef {Object} ColorRGB
  * @property {number} r
  * @property {number} g
  * @property {number} b
+ * @memberof module:se/fivebyfive/ortho/lib/color
  */
 /**
  * 
@@ -116,6 +12,7 @@ const $colorHarmony =
  * @property {number} h
  * @property {number} s
  * @property {number} v
+ * @memberof module:se/fivebyfive/ortho/lib/color
  */
 /**
  * 
@@ -123,22 +20,17 @@ const $colorHarmony =
  * @property {number} h
  * @property {number} s
  * @property {number} l
+ * @memberof module:se/fivebyfive/ortho/lib/color
  */
 
-const $colorUtil =
-/**
- * @constructs ColorUtil
- * @param {module:se/fivebyfive/ortho/extensions~LinearUtil} $linear
- **/ 
-($linear) => {
+export function $colorHelper($linear) {
     /**
      * @classdesc Helpers for converting colors among color-spaces
      * @class
+     * @hideconstructor
+     * @memberof module:se/fivebyfive/ortho/lib/color
      */
-    class ColorUtil {
-        /**
-         * @hideconstructor
-         */
+    class ColorHelper {
         constructor() {
             /**
              * Convert Hex to RGB.
@@ -397,139 +289,5 @@ const $colorUtil =
         }
     };
 
-    return new ColorUtil();
-};
-
-const $colorWheel =
-($colorUtil, $linear, $window) => {
-    /**
-     * @classdesc Class for creating color-wheels that can be drawn on an HTML canvas.
-     * @class
-     */
-    class ColorWheel {
-        /**
-         * Create new instance of `ColorWheel`, do be drawn in `canvas`
-         * @param {external:HTMLCanvas} canvas 
-         */
-        constructor(canvas) {
-            canvas.height = canvas.width = $window.innerHeight / 2;
-            const context = canvas.getContext('2d');
-            const middle = { x: canvas.width/2, y: canvas.height/2};
-            const radius = Math.min(middle.x, middle.y);
-
-            const angle = (x1, y1, x2, y2) => {
-                const a = Math.atan2(y2 - y1, x2 - x1) * 180 / Math.PI;
-                return (a + 360) % 360;
-            };
-            const distance = (x1, y1, x2, y2) => {
-                return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
-            };
-            const map_psl = [
-                { p:  0, s: 0, l: 100},
-                { p: .2, s: 20, l: 65},
-                { p: .5, s: 50, l: 50},
-                { p:  1, s: 100, l: 0}
-            ];
-            const map_lp = [
-                { p:  1, l: 0},
-                { p: .5, l: 50},
-                { p: .2, l: 65},
-                { p:  0, l: 100},
-            ];
-
-            /**
-             * Calculate the color at the given mouse position
-             * @param {external:MouseEvent} mouseEvent
-             * @returns {ColorHSL}
-             */
-            this.color_at = (mouseEvent) => {
-                const x = mouseEvent.offsetX,
-                    y = mouseEvent.offsetY;
-                const a = angle(middle.x, middle.y, x, y);
-                const d = distance(middle.x, middle.y, x, y) /  radius;
-                const h = $colorUtil.rybhue_to_hslhue(a);
-                const s = $linear.rangeMap(map_psl, 'p', 's', d);
-                const l = $linear.rangeMap(map_psl, 'p', 'l', d);
-
-                return { h, s, l };
-            };
-
-            /**
-             * Calculate the position of the given color in the color wheel.
-             * @param {ColorHSL} param0 
-             * @returns {{x: number, y: number}}
-             */
-            this.color_to_pos = ({h, s, l}) => {
-                const a = $colorUtil.hslhue_to_rybhue(h) * Math.PI / 180;
-                const dS = $linear.rangeMap(map_psl, 's', 'p', s) * radius;
-                const dL = $linear.rangeMap(map_lp, 'l', 'p', l) * radius;
-                const d = (2* dS + dL) / 3;
-                return {
-                    x: d * Math.cos(a) + middle.x,
-                    y: d * Math.sin(a) + middle.y
-                };
-            };
-
-
-            /**
-             * Draw the color wheel.
-             * @function
-             */
-            this.draw = () => {
-                for(let angle = 0; angle <= 360; angle++) {
-                    const startAngle = (angle-2)*Math.PI/180;
-                    const endAngle = angle * Math.PI/180;
-                    context.beginPath();
-                    context.moveTo(middle.x, middle.y);
-                    context.arc(middle.x, middle.y, radius, startAngle, endAngle, false);
-                    context.closePath();
-
-                    const hue = $colorUtil.rybhue_to_hslhue(angle);
-                    const gradient = context.createRadialGradient(middle.x, middle.y, 0, middle.x, middle.y, radius);
-                    map_psl.forEach((m) => gradient.addColorStop(m.p, `hsl(${hue}, ${m.s}%, ${m.l}%)`));
-                    context.fillStyle = gradient;
-                    context.fill();
-                }
-                context.moveTo(middle.x, middle.y);
-                context.beginPath();
-                context.arc(middle.x, middle.y, radius, 0, 2 * Math.PI, false);
-                context.lineWidth = 2;
-                context.strokeStyle= 'white';
-                context.stroke();
-            };
-        }
-    }
-
-    return {
-        create: (canvas) => new ColorWheel(canvas)
-    };
-};
-
-/**
- * All injectable services from {@link module:se/fivebyfive/ortho/color}
- * @module se/fivebyfive/ortho/color/services
- */
-const services = {
-    /** 
-     * @name $colorUtil
-     * @static
-     * @type {module:se/fivebyfive/ortho/color~ColorUtil}
-     **/
-    $colorUtil,
-
-    /** 
-     * @name $colorHarmony
-     * @static
-     * @type {module:se/fivebyfive/ortho/color~ColorHarmony}
-     **/
-    $colorHarmony,
-
-    /** 
-     * @name $colorWheel
-     * @static
-     * @type {module:se/fivebyfive/ortho/color~ColorWheel}
-     **/
-    $colorWheel
-};
-$o.registerAll(services);
-})(orthogonal);
+    return new ColorHelper();
+}

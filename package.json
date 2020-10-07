@@ -8,7 +8,7 @@
     "build:bundlejs:prd": "webpack --config webpack.config.js --mode production",
     "build:bundlejs:dev": "webpack --config webpack.config.js --mode development",
     "exec:browser": "webpack-dev-server --config webpack.config.js --mode development",
-    "docs": "jsdoc2md --plugin dmd-readable --files src/**/*.js > docs/index.md",
+    "docs": "jsdoc2md --plugin dmd-readable --files src/orthogonal.js src/core/**/*.js src/lib/**/*.js > docs/index.md",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

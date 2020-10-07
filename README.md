@@ -5,7 +5,9 @@ Orthogonal is a JavaScript library providing:
  1) a store,
  1) a cache, &
  1) a bunch of utility methods
- 
+
+The philosophy when designing Orthogonal has been "worse but better".
+
 ## Some examples:
 
 See, e.g., [klr-monster](https://github.com/fivebyfive-se/klr-monster/blob/master/client/src/js/main.js)
@@ -26,8 +28,8 @@ orthogonal.call(do_expensive_stuff); // injects $cache
     // onReady is a utility method, which calls a dependency-injected version
     // of the function you pass it either directly, if the DOM is loaded, or
     // on window.load. 
-    orthogonal.onReady(($css, $store) => { // inject $css $store
-        const menuStore = $store.create('menu') // create a new store
+    orthogonal.onReady(($css, $store) => { // inject $css and $store
+        const menuStore = $store // create a new store
             .state({
                 header: {
                     isDetached: false,

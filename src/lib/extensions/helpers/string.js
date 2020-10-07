@@ -28,7 +28,6 @@
  /**
   * String manipulation
   * @class StringHelper
-  * @hideconstructor
   */
 export function stringFactory($object) {
     /**

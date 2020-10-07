@@ -1,7 +1,6 @@
 /**
  * Array manipulation
  * @constructs ArrayHelper
- * @hideconstructor
  */
 export function arrayFactory() {
     /**

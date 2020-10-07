@@ -15,7 +15,6 @@ import { OrthoStore } from './core/services/store';
  * @classdesc The main entry point
  * @class
  * @augments OrthoInjector
- * @hideconstructor
  */
 export class Orthogonal {
     constructor() {

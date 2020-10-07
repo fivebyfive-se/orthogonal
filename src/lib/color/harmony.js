@@ -2,7 +2,6 @@ export function colorHarmonyFactory($array, $colorHelper) {
     /**
      * @classdesc Color-harmony generator
      * @class
-     * @hideconstructor
      */
     class ColorHarmony {
         constructor() {

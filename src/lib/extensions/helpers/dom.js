@@ -1,7 +1,6 @@
 /**
  * Helpers for handling DOM
  * @class DomHelper
- * @hideconstructor
  */
 export function domFactory($array, $window, $document) {
     /**

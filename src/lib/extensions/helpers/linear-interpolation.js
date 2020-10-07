@@ -1,7 +1,6 @@
 /**
  * Useful interpolation helpers for converting between scales
  * @class LinearInterpolationHelper
- * @hideconstructor
  */
 export function linearFactory() {
     /**

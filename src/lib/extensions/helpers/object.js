@@ -1,7 +1,6 @@
  /**
   * Object manipulation
   * @class ObjectHelper
-  * @hideconstructor
   */
 export function objectFactory($array) {
     /**

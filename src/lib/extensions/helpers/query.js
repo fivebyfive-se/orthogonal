@@ -1,7 +1,6 @@
  /**
   * Helpers for querying the dom
   * @class QueryHelper
-  * @hideconstructor
   */
 export function queryFactory($object, $string, $document) {
     /**

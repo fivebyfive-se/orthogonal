@@ -1,7 +1,6 @@
  /**
   * Helpers for working with CSS
   * @class CssHelper
-  * @hideconstructor
   */
 export function cssFactory($string, $document) {
     /**

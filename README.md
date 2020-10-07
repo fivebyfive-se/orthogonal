@@ -5,9 +5,6 @@ Orthogonal is a JavaScript library providing:
  1) a store,
  1) a cache, &
  1) a bunch of utility methods
-
-The variable `orthogonal` is added to the global scope (I know! I know!),
-which exposes the functionality. 
  
 ## Some examples:
 

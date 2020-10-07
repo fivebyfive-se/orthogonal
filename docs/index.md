@@ -39,6 +39,29 @@
 
 ## orthogonal
 
+* [orthogonal](#module_orthogonal)
+    * _static_
+        * [.orthogonal()](#module_orthogonal.orthogonal)
+        * [.registerExtensions(extensions)](#module_orthogonal.registerExtensions)
+    * _inner_
+        * [~Orthogonal](#module_orthogonal..Orthogonal) ⇐ <code>OrthoInjector</code>
+
+
+<br><a name="module_orthogonal.orthogonal"></a>
+
+### orthogonal.orthogonal()
+> Initializes Orthogonal
+
+
+<br><a name="module_orthogonal.registerExtensions"></a>
+
+### orthogonal.registerExtensions(extensions)
+
+| Param | Type |
+| --- | --- |
+| extensions | <code>any</code> | 
+
+
 <br><a name="module_orthogonal..Orthogonal"></a>
 
 ### orthogonal~Orthogonal ⇐ <code>OrthoInjector</code>
@@ -384,12 +407,9 @@
 ## orthogonal/lib/color/services
 
 * [orthogonal/lib/color/services](#module_orthogonal/lib/color/services)
-    * _static_
-        * [.$colorHarmony](#module_orthogonal/lib/color/services.$colorHarmony) : <code>module:orthogonal/lib/color~ColorHarmony</code>
-        * [.$colorHelper](#module_orthogonal/lib/color/services.$colorHelper) : <code>module:orthogonal/lib/color~ColorHelper</code>
-        * [.$colorWheel](#module_orthogonal/lib/color/services.$colorWheel) : <code>module:orthogonal/lib/color~ColorWheel</code>
-    * _inner_
-        * [~initColor()](#module_orthogonal/lib/color/services..initColor)
+    * [.$colorHarmony](#module_orthogonal/lib/color/services.$colorHarmony) : <code>module:orthogonal/lib/color~ColorHarmony</code>
+    * [.$colorHelper](#module_orthogonal/lib/color/services.$colorHelper) : <code>module:orthogonal/lib/color~ColorHelper</code>
+    * [.$colorWheel](#module_orthogonal/lib/color/services.$colorWheel) : <code>module:orthogonal/lib/color~ColorWheelFactory</code>
 
 
 <br><a name="module_orthogonal/lib/color/services.$colorHarmony"></a>
@@ -402,11 +422,7 @@
 
 <br><a name="module_orthogonal/lib/color/services.$colorWheel"></a>
 
-### orthogonal/lib/color/services.$colorWheel : <code>module:orthogonal/lib/color~ColorWheel</code>
-
-<br><a name="module_orthogonal/lib/color/services..initColor"></a>
-
-### orthogonal/lib/color/services~initColor()
+### orthogonal/lib/color/services.$colorWheel : <code>module:orthogonal/lib/color~ColorWheelFactory</code>
 
 <br><a name="module_orthogonal/lib/extensions"></a>
 
@@ -417,44 +433,42 @@
 ## orthogonal/lib/extensions/services
 
 * [orthogonal/lib/extensions/services](#module_orthogonal/lib/extensions/services)
-    * _static_
-        * [.$array](#module_orthogonal/lib/extensions/services.$array) : <code>module:orthogonal/lib/extensions~ArrayHelper</code>
-        * [.$object](#module_orthogonal/lib/extensions/services.$object) : <code>module:orthogonal/lib/extensions~ObjectHelper</code>
-        * [.$string](#module_orthogonal/lib/extensions/services.$string) : <code>module:orthogonal/lib/extensions~StringHelper</code>
-        * [.$query](#module_orthogonal/lib/extensions/services.$query) : <code>module:orthogonal/lib/extensions~QueryHelper</code>
-        * [.$css](#module_orthogonal/lib/extensions/services.$css) : <code>module:orthogonal/lib/extensions~CssHelper</code>
-        * [.$linear](#module_orthogonal/lib/extensions/services.$linear) : <code>module:orthogonal/lib/extensions~LinearInterpolationHelper</code>
-    * _inner_
-        * [~initExtensions()](#module_orthogonal/lib/extensions/services..initExtensions)
+    * [.$array](#module_orthogonal/lib/extensions/services.$array) : <code>module:orthogonal/lib/extensions~ArrayHelper</code>
+    * [.$css](#module_orthogonal/lib/extensions/services.$css) : <code>module:orthogonal/lib/extensions~CssHelper</code>
+    * [.$dom](#module_orthogonal/lib/extensions/services.$dom) : <code>module:orthogonal/lib/extensions~DomHelper</code>
+    * [.$linear](#module_orthogonal/lib/extensions/services.$linear) : <code>module:orthogonal/lib/extensions~LinearInterpolationHelper</code>
+    * [.$object](#module_orthogonal/lib/extensions/services.$object) : <code>module:orthogonal/lib/extensions~ObjectHelper</code>
+    * [.$query](#module_orthogonal/lib/extensions/services.$query) : <code>module:orthogonal/lib/extensions~QueryHelper</code>
+    * [.$string](#module_orthogonal/lib/extensions/services.$string) : <code>module:orthogonal/lib/extensions~StringHelper</code>
 
 
 <br><a name="module_orthogonal/lib/extensions/services.$array"></a>
 
 ### orthogonal/lib/extensions/services.$array : <code>module:orthogonal/lib/extensions~ArrayHelper</code>
 
-<br><a name="module_orthogonal/lib/extensions/services.$object"></a>
-
-### orthogonal/lib/extensions/services.$object : <code>module:orthogonal/lib/extensions~ObjectHelper</code>
-
-<br><a name="module_orthogonal/lib/extensions/services.$string"></a>
-
-### orthogonal/lib/extensions/services.$string : <code>module:orthogonal/lib/extensions~StringHelper</code>
-
-<br><a name="module_orthogonal/lib/extensions/services.$query"></a>
-
-### orthogonal/lib/extensions/services.$query : <code>module:orthogonal/lib/extensions~QueryHelper</code>
-
 <br><a name="module_orthogonal/lib/extensions/services.$css"></a>
 
 ### orthogonal/lib/extensions/services.$css : <code>module:orthogonal/lib/extensions~CssHelper</code>
+
+<br><a name="module_orthogonal/lib/extensions/services.$dom"></a>
+
+### orthogonal/lib/extensions/services.$dom : <code>module:orthogonal/lib/extensions~DomHelper</code>
 
 <br><a name="module_orthogonal/lib/extensions/services.$linear"></a>
 
 ### orthogonal/lib/extensions/services.$linear : <code>module:orthogonal/lib/extensions~LinearInterpolationHelper</code>
 
-<br><a name="module_orthogonal/lib/extensions/services..initExtensions"></a>
+<br><a name="module_orthogonal/lib/extensions/services.$object"></a>
 
-### orthogonal/lib/extensions/services~initExtensions()
+### orthogonal/lib/extensions/services.$object : <code>module:orthogonal/lib/extensions~ObjectHelper</code>
+
+<br><a name="module_orthogonal/lib/extensions/services.$query"></a>
+
+### orthogonal/lib/extensions/services.$query : <code>module:orthogonal/lib/extensions~QueryHelper</code>
+
+<br><a name="module_orthogonal/lib/extensions/services.$string"></a>
+
+### orthogonal/lib/extensions/services.$string : <code>module:orthogonal/lib/extensions~StringHelper</code>
 
 <br><a name="external_Window"></a>
 

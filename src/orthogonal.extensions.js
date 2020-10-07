@@ -357,7 +357,7 @@
          * @param {external:Element} element 
          * @param {string[]} eventNames 
          * @param  {...function} callbacks
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const onEvents = (element, eventNames, ...callbacks) => {
             $array.ensureArray(eventNames).forEach((eventName) => {
@@ -376,7 +376,7 @@
          * @param {external:Element} element 
          * @param {string[]} eventNames 
          * @param  {...function} callbacks
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const onEventsWithoutDefault = (element, eventNames, ...callbacks) => {
             onEvents(element, eventNames, ...callbacks.map((cb) => (ev) => {
@@ -393,6 +393,7 @@
          * @param {modules:se/fivebyfive/ortho/OrthoStore} store 
          * @param {string} action 
          * @param {function} payloadSelector 
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const dispatchOnEvent = (element, eventNames, store, action, payloadSelector) => {
             onEventsWithoutDefault(element, eventNames, (ev) => store.dispatch(action, payloadSelector(ev)));
@@ -402,7 +403,7 @@
          * Get x and y coordinates of `element`
          * @param {external:Element} element 
          * @returns {{x: number, y: number}}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const getPosition = (element) => {
             const { top, left } = element.getBoundingClientRect();
@@ -415,7 +416,7 @@
          * Get dimensions of `element`
          * @param {external:Element} element
          * @returns {{height: number, height: number}}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper# 
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const getSize = (element) => {
             const [{ height, width }] = element.getClientRects();
@@ -427,7 +428,7 @@
          * or empty string if there is no value.
          * @param {external:Element} element 
          * @returns {string}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const getValue = (element) => $string.sanitize(element.value);
 
@@ -437,7 +438,7 @@
          * @param {external:Element} element
          * @param {string} value 
          * @returns {string}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const setValue = (element, value) => element.value = $string.sanitize(value);
 
@@ -447,7 +448,7 @@
          * @param {Object} attributes 
          * @param  {...any} children 
          * @returns {external:HTMLElement}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const createTag = (tagName, attributes, ...children) => {
             const tag = $document.createElement(tagName);
@@ -462,7 +463,7 @@
          * treating `selectOrElement` as a dom query.
          * @param {string|exernal:Element} selectorOrElement 
          * @returns {external:Element}
-         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper#
+         * @memberof! module:se/fivebyfive/ortho/extensions~DomHelper
          */
         const ensureElement = (selectorOrElement) => {
             if (typeof selectorOrElement === 'string') {

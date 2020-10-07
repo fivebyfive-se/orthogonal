@@ -41,17 +41,15 @@
         * [.snakeToCamel(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel) ⇒ <code>string</code>
         * [.camelToSnake(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake) ⇒ <code>string</code>
     * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
-        * _instance_
-            * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
-            * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault)
-            * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getPosition) ⇒ <code>Object</code>
-            * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getSize) ⇒ <code>Object</code>
-            * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getValue) ⇒ <code>string</code>
-            * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper+setValue) ⇒ <code>string</code>
-            * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
-            * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
-        * _inner_
-            * [~dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent)
+        * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEvents)
+        * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault)
+        * [.dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent)
+        * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getPosition) ⇒ <code>Object</code>
+        * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getSize) ⇒ <code>Object</code>
+        * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getValue) ⇒ <code>string</code>
+        * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper.setValue) ⇒ <code>string</code>
+        * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper.createTag) ⇒ <code>external:HTMLElement</code>
+        * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement) ⇒ <code>external:Element</code>
     * [~QueryHelper](#module_se/fivebyfive/ortho/extensions..QueryHelper)
         * [.map(root, selector, callback)](#module_se/fivebyfive/ortho/extensions..QueryHelper+map) ⇒ <code>Array.&lt;any&gt;</code>
         * [.queryByAttribute(root, attribute)](#module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute) ⇒ <code>Object</code>
@@ -372,22 +370,20 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 
 
 * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
-    * _instance_
-        * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
-        * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault)
-        * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getPosition) ⇒ <code>Object</code>
-        * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getSize) ⇒ <code>Object</code>
-        * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getValue) ⇒ <code>string</code>
-        * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper+setValue) ⇒ <code>string</code>
-        * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
-        * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
-    * _inner_
-        * [~dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent)
+    * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEvents)
+    * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault)
+    * [.dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent)
+    * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getPosition) ⇒ <code>Object</code>
+    * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getSize) ⇒ <code>Object</code>
+    * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getValue) ⇒ <code>string</code>
+    * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper.setValue) ⇒ <code>string</code>
+    * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper.createTag) ⇒ <code>external:HTMLElement</code>
+    * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement) ⇒ <code>external:Element</code>
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.onEvents"></a>
 
-#### domHelper.onEvents(element, eventNames, ...callbacks)
+#### DomHelper.onEvents(element, eventNames, ...callbacks)
 > Connect `callbacks` to the list of events in `eventNames` on `element`.
 
 
@@ -398,9 +394,9 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | ...callbacks | <code>function</code> | 
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault"></a>
 
-#### domHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
+#### DomHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
 > Connect `callbacks` to the list of events in `eventNames` on `element`.
 > Also wraps all callbacks in a function that calls `e.preventDefault()' on
 > all trigger events.
@@ -413,81 +409,9 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | ...callbacks | <code>function</code> | 
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent"></a>
 
-#### domHelper.getPosition(element) ⇒ <code>Object</code>
-> Get x and y coordinates of `element`
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
-
-#### domHelper.getSize(element) ⇒ <code>Object</code>
-> Get dimensions of `element`
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
-
-#### domHelper.getValue(element) ⇒ <code>string</code>
-> Get sanitized value from `element` (assumed to be an input element),
-> or empty string if there is no value.
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
-
-#### domHelper.setValue(element, value) ⇒ <code>string</code>
-> Set sanitized `value` on `element` (assumed to be an input element),
-> or empty string if there is no value.
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-| value | <code>string</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
-
-#### domHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
-> Create an HTML element.
-
-
-| Param | Type |
-| --- | --- |
-| tagName | <code>string</code> | 
-| attributes | <code>Object</code> | 
-| ...children | <code>any</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
-
-#### domHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
-> If `selectOrElement` is an `Element`, return it, otherwise try to find it
-> treating `selectOrElement` as a dom query.
-
-
-| Param | Type |
-| --- | --- |
-| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent"></a>
-
-#### DomHelper~dispatchOnEvent(element, eventNames, store, action, payloadSelector)
+#### DomHelper.dispatchOnEvent(element, eventNames, store, action, payloadSelector)
 > Dispatch `action` on `store` when the given `eventNames` occur.
 > `payloadSelector` is a callback-function, which transforms an element into a payload.
 
@@ -499,6 +423,78 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | store | <code>modules:se/fivebyfive/ortho/OrthoStore</code> | 
 | action | <code>string</code> | 
 | payloadSelector | <code>function</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getPosition"></a>
+
+#### DomHelper.getPosition(element) ⇒ <code>Object</code>
+> Get x and y coordinates of `element`
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getSize"></a>
+
+#### DomHelper.getSize(element) ⇒ <code>Object</code>
+> Get dimensions of `element`
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getValue"></a>
+
+#### DomHelper.getValue(element) ⇒ <code>string</code>
+> Get sanitized value from `element` (assumed to be an input element),
+> or empty string if there is no value.
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.setValue"></a>
+
+#### DomHelper.setValue(element, value) ⇒ <code>string</code>
+> Set sanitized `value` on `element` (assumed to be an input element),
+> or empty string if there is no value.
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+| value | <code>string</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.createTag"></a>
+
+#### DomHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
+> Create an HTML element.
+
+
+| Param | Type |
+| --- | --- |
+| tagName | <code>string</code> | 
+| attributes | <code>Object</code> | 
+| ...children | <code>any</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement"></a>
+
+#### DomHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
+> If `selectOrElement` is an `Element`, return it, otherwise try to find it
+> treating `selectOrElement` as a dom query.
+
+
+| Param | Type |
+| --- | --- |
+| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
 
 
 <br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>
@@ -787,17 +783,15 @@ return `val` from range `from` fitted to the range `b`.
         * [.snakeToCamel(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+snakeToCamel) ⇒ <code>string</code>
         * [.camelToSnake(str)](#module_se/fivebyfive/ortho/extensions..StringHelper+camelToSnake) ⇒ <code>string</code>
     * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
-        * _instance_
-            * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
-            * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault)
-            * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getPosition) ⇒ <code>Object</code>
-            * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getSize) ⇒ <code>Object</code>
-            * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getValue) ⇒ <code>string</code>
-            * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper+setValue) ⇒ <code>string</code>
-            * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
-            * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
-        * _inner_
-            * [~dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent)
+        * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEvents)
+        * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault)
+        * [.dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent)
+        * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getPosition) ⇒ <code>Object</code>
+        * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getSize) ⇒ <code>Object</code>
+        * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getValue) ⇒ <code>string</code>
+        * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper.setValue) ⇒ <code>string</code>
+        * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper.createTag) ⇒ <code>external:HTMLElement</code>
+        * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement) ⇒ <code>external:Element</code>
     * [~QueryHelper](#module_se/fivebyfive/ortho/extensions..QueryHelper)
         * [.map(root, selector, callback)](#module_se/fivebyfive/ortho/extensions..QueryHelper+map) ⇒ <code>Array.&lt;any&gt;</code>
         * [.queryByAttribute(root, attribute)](#module_se/fivebyfive/ortho/extensions..QueryHelper+queryByAttribute) ⇒ <code>Object</code>
@@ -1118,22 +1112,20 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 
 
 * [~DomHelper](#module_se/fivebyfive/ortho/extensions..DomHelper)
-    * _instance_
-        * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEvents)
-        * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault)
-        * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getPosition) ⇒ <code>Object</code>
-        * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getSize) ⇒ <code>Object</code>
-        * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper+getValue) ⇒ <code>string</code>
-        * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper+setValue) ⇒ <code>string</code>
-        * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper+createTag) ⇒ <code>external:HTMLElement</code>
-        * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement) ⇒ <code>external:Element</code>
-    * _inner_
-        * [~dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent)
+    * [.onEvents(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEvents)
+    * [.onEventsWithoutDefault(element, eventNames, ...callbacks)](#module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault)
+    * [.dispatchOnEvent(element, eventNames, store, action, payloadSelector)](#module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent)
+    * [.getPosition(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getPosition) ⇒ <code>Object</code>
+    * [.getSize(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getSize) ⇒ <code>Object</code>
+    * [.getValue(element)](#module_se/fivebyfive/ortho/extensions..DomHelper.getValue) ⇒ <code>string</code>
+    * [.setValue(element, value)](#module_se/fivebyfive/ortho/extensions..DomHelper.setValue) ⇒ <code>string</code>
+    * [.createTag(tagName, attributes, ...children)](#module_se/fivebyfive/ortho/extensions..DomHelper.createTag) ⇒ <code>external:HTMLElement</code>
+    * [.ensureElement(selectorOrElement)](#module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement) ⇒ <code>external:Element</code>
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEvents"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.onEvents"></a>
 
-#### domHelper.onEvents(element, eventNames, ...callbacks)
+#### DomHelper.onEvents(element, eventNames, ...callbacks)
 > Connect `callbacks` to the list of events in `eventNames` on `element`.
 
 
@@ -1144,9 +1136,9 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | ...callbacks | <code>function</code> | 
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+onEventsWithoutDefault"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.onEventsWithoutDefault"></a>
 
-#### domHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
+#### DomHelper.onEventsWithoutDefault(element, eventNames, ...callbacks)
 > Connect `callbacks` to the list of events in `eventNames` on `element`.
 > Also wraps all callbacks in a function that calls `e.preventDefault()' on
 > all trigger events.
@@ -1159,81 +1151,9 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | ...callbacks | <code>function</code> | 
 
 
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getPosition"></a>
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.dispatchOnEvent"></a>
 
-#### domHelper.getPosition(element) ⇒ <code>Object</code>
-> Get x and y coordinates of `element`
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getSize"></a>
-
-#### domHelper.getSize(element) ⇒ <code>Object</code>
-> Get dimensions of `element`
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+getValue"></a>
-
-#### domHelper.getValue(element) ⇒ <code>string</code>
-> Get sanitized value from `element` (assumed to be an input element),
-> or empty string if there is no value.
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+setValue"></a>
-
-#### domHelper.setValue(element, value) ⇒ <code>string</code>
-> Set sanitized `value` on `element` (assumed to be an input element),
-> or empty string if there is no value.
-
-
-| Param | Type |
-| --- | --- |
-| element | <code>external:Element</code> | 
-| value | <code>string</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+createTag"></a>
-
-#### domHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
-> Create an HTML element.
-
-
-| Param | Type |
-| --- | --- |
-| tagName | <code>string</code> | 
-| attributes | <code>Object</code> | 
-| ...children | <code>any</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper+ensureElement"></a>
-
-#### domHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
-> If `selectOrElement` is an `Element`, return it, otherwise try to find it
-> treating `selectOrElement` as a dom query.
-
-
-| Param | Type |
-| --- | --- |
-| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
-
-
-<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper..dispatchOnEvent"></a>
-
-#### DomHelper~dispatchOnEvent(element, eventNames, store, action, payloadSelector)
+#### DomHelper.dispatchOnEvent(element, eventNames, store, action, payloadSelector)
 > Dispatch `action` on `store` when the given `eventNames` occur.
 > `payloadSelector` is a callback-function, which transforms an element into a payload.
 
@@ -1245,6 +1165,78 @@ split({a: [0, 1, 2]}); // => [{a: 0}, {a: 1}, {a: 2}]
 | store | <code>modules:se/fivebyfive/ortho/OrthoStore</code> | 
 | action | <code>string</code> | 
 | payloadSelector | <code>function</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getPosition"></a>
+
+#### DomHelper.getPosition(element) ⇒ <code>Object</code>
+> Get x and y coordinates of `element`
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getSize"></a>
+
+#### DomHelper.getSize(element) ⇒ <code>Object</code>
+> Get dimensions of `element`
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.getValue"></a>
+
+#### DomHelper.getValue(element) ⇒ <code>string</code>
+> Get sanitized value from `element` (assumed to be an input element),
+> or empty string if there is no value.
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.setValue"></a>
+
+#### DomHelper.setValue(element, value) ⇒ <code>string</code>
+> Set sanitized `value` on `element` (assumed to be an input element),
+> or empty string if there is no value.
+
+
+| Param | Type |
+| --- | --- |
+| element | <code>external:Element</code> | 
+| value | <code>string</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.createTag"></a>
+
+#### DomHelper.createTag(tagName, attributes, ...children) ⇒ <code>external:HTMLElement</code>
+> Create an HTML element.
+
+
+| Param | Type |
+| --- | --- |
+| tagName | <code>string</code> | 
+| attributes | <code>Object</code> | 
+| ...children | <code>any</code> | 
+
+
+<br><a name="module_se/fivebyfive/ortho/extensions..DomHelper.ensureElement"></a>
+
+#### DomHelper.ensureElement(selectorOrElement) ⇒ <code>external:Element</code>
+> If `selectOrElement` is an `Element`, return it, otherwise try to find it
+> treating `selectOrElement` as a dom query.
+
+
+| Param | Type |
+| --- | --- |
+| selectorOrElement | <code>string</code>, <code>exernal:Element</code> | 
 
 
 <br><a name="module_se/fivebyfive/ortho/extensions..QueryHelper"></a>

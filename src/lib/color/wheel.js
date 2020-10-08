@@ -48,7 +48,7 @@ export function colorWheelFactory($colorHelper, $linear, $window) {
                 config.canvas = canvas;
                 config.context = canvas.getContext('2d');
                 config.middle = { x: canvas.width/2, y: canvas.height/2};
-                config.radius = Math.min(middle.x, middle.y);
+                config.radius = Math.min(config.middle.x, config.middle.y);
             };
 
             /**
